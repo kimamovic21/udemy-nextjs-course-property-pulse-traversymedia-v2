@@ -42,3 +42,12 @@ Section 02. Next.js Fundamentals & Project Start
 -u globals.css fajl dodajemo tri Tailwind CSS direktive
 -u komponentu layout.jsx importujemo globals.css fajl
 -u folder app dodajemo sliku favicon.ico
+
+09. Metadata & Assets
+-za osvjezenje stranice ukucamo na tastaturi -ctrl + shift + R
+-u komponenti layout.jsx kreiramo i eksportujemo varijablu objekt const metadata
+-u objekt metadata dodajemo opcije title, keywords i description
+-u folderu assets kreiramo folder images
+-u folder images dodajemo cetiri slike
+-u folderu public kreiramo folder images i properties
+-u folder properties dodajemo slike nekretnina
