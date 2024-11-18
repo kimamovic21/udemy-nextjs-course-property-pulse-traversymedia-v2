@@ -82,3 +82,20 @@ Section 02. Next.js Fundamentals & Project Start
 -u komponenti Navbar.jsx, u jsx-u kreiramo HTML elemente sa Tailwind CSS klasama
 -u komponentu Navbar.jsx importujemo komponentu Images iz paketa Next Image
 -importujemo slike logo i profileDefault
+
+14. Navbar Links, Dropdown State & React Icons
+-u komponentu Navbar.jsx importujemo komponentu Link
+-u jsx-u, preimenujemo HTML elemente <a> sa komponentom Link
+-u terminalu instaliramo paket React Icons
+-dodajemo direktivu 'use client'
+-importujemo funkciju useState()
+-kreiramo state varijablu isMobileMenuOpen i set funkciju setIsMobileMenuOpen
+-u div elementu za Mobile menu button, button elementu dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo anonimnu funkciju
+-u anonimnu funkciju proslijedujemo funkciju setIsMobileMenuOpen
+-u jsx dodajemo uslov {isMobileMenuOpen && (...)} i div element za Mobile menu
+-kreiramo state varijablu isProfileMenuOpen i set funkciju setIsProfileMenuOpen
+-u div elementu za Profile dropdown button, button elementu dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo anonimnu funkciju
+-u anonimnu funkciju proslijedujemo funkciju setIsProfileMenuOpen
+-dodajemo uslov {isProfileMenuOpen && (...)}
