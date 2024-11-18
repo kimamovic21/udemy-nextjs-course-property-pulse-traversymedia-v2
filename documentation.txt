@@ -146,3 +146,15 @@ Section 02. Next.js Fundamentals & Project Start
 -prvi uslov u ternarnom operatoru je p element ukoliko nema nekretnina
 -drugi uslov u ternarnom operatoru je metoda recentProperties?.map()
 -u funkciju map() dodajemo komponentu PropertyCard sa prop key i property
+
+19. Custom Not Found & Loading Pages
+-u folderu app kreiramo komponentu not-found.jsx
+-u komponenti not-found.jsx kreiramo funkciju NotFoundPage()
+-u komponentu NotFoundPage() importujemo React ikonicu FaExclamationTriangle i komponentu Link
+-u folderu app kreiramo komponentu loading.jsx
+-otvorimo link: https://www.npmjs.com/package/react-spinners
+-u terminalu instaliramo paket React Spinners sa komandom npm i react-spinners
+-u komponentu loading.jsx importujemo komponentu ClipLoader iz paketa React Spinners
+-kreiramo varijablu objekt const override
+-u jsx-u dodajemo komponentu ClipLoader sa prop color, loading, cssOverride, size, aria-label i data-testid
+-u prop cssOverride proslijedujemo vrijednost varijable override
