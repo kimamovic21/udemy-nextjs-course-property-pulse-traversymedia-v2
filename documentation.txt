@@ -30,3 +30,15 @@ Section 02. Next.js Fundamentals & Project Start
 -otvorimo web stranicu: https://nextjs.org/
 -u terminalu instaliramo Next.js aplikaciju sa komandom npx create-next-app@14.1.0
 -u tailwind.config.js fajl u konfiguracioni objekt extend dodajemo objekte fontFamily i gridTemplateCulumns
+
+08. Layout & Homepage 
+-u folderu app kreiramo komponentu layout.jsx
+-u komponenti layout.jsx kreiramo funkciju MainLayout()
+-funkciji MainLayout() dodajemo parametar destruktuirani prop children
+-kreiramo komponentu page.jsx
+-u komponenti page.tsx kreiramo funkciju HomePage()
+-kreiramo folder assets
+-u folderu assets kreiramo folder styles i globals.css fajl
+-u globals.css fajl dodajemo tri Tailwind CSS direktive
+-u komponentu layout.jsx importujemo globals.css fajl
+-u folder app dodajemo sliku favicon.ico
