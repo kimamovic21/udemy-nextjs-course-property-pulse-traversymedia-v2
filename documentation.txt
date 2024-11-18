@@ -99,3 +99,12 @@ Section 02. Next.js Fundamentals & Project Start
 -u dogadaj onClick proslijedujemo anonimnu funkciju
 -u anonimnu funkciju proslijedujemo funkciju setIsProfileMenuOpen
 -dodajemo uslov {isProfileMenuOpen && (...)}
+
+15. Active Links & Conditional Rendering
+-u komponentu Navbar.jsx importujemo i kreiramo funkciju usePathname
+-vrijednost funkcije usePathname() pohranjujemo u varijablu const pathname
+-u div elementu za Desktop Menu Hidden below md screens, komponenti Link dodajemo dinamicku klasu
+-u dinamicku klasu dodajemo uslov ternarni operator pathname === '/'
+-kreiramo state varijablu isLoggedIn i set funkciju setLoggedIn
+-dodajemo nekoliko uslova {isLoggedIn && (...)}
+-u div elementu za Right Side Menu dodajemo uslov {!isLoggedIn && (...)}
