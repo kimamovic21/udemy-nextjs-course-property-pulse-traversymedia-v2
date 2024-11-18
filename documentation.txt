@@ -10,3 +10,12 @@ Section 01. Introduction
 03. What is Next.js ?
 
 04. Next.js Features
+
+05. Environment Setup
+-otvorimo web stranicu: https://code.visualstudio.com
+-otvorimo web stranicu: https://git-scm.com/
+-Google Chrome extension React Developer Tools
+-otvorimo web stranicu: https://www.mongodb.com/
+-VS Code Code extension Spell Checker
+-VS Code Code extension Simple React Snippets
+VS Code Code extension Prettier - Code formatter
