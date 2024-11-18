@@ -61,3 +61,5 @@ Section 02. Next.js Fundamentals & Project Start
 -u komponenti properties/[id]/page.tsx kreiramo funkciju PropertyPage()
 -u komponentu app/page.tsx importujemo komponentu Link iz paketa Next Link
 -komponenti Link dodajemo prop href
+
+11. Server vs Client Components
