@@ -108,3 +108,13 @@ Section 02. Next.js Fundamentals & Project Start
 -kreiramo state varijablu isLoggedIn i set funkciju setLoggedIn
 -dodajemo nekoliko uslova {isLoggedIn && (...)}
 -u div elementu za Right Side Menu dodajemo uslov {!isLoggedIn && (...)}
+
+16. Homepage Components & Footer
+-u folderu components kreiramo komponentu Hero.jsx
+-kreiramo komponentu InfoBoxes.jsx
+-u komponentu app/page.jsx importujemo komponente Hero.jsx i InfoBoxes.jsx
+-kreiramo komponentu InfoBox.jsx
+-u komponenti InfoBox.jsx funkciji InfoBox() dodajemo parametre destruktuirane props
+-u komponentu InfoBoxes.jsx importujemo komponentu InfoBox
+-kreiramo komponentu Footer.jsx
+-u komponentu layout.jsx importujemo komponentu Footer.jsx
