@@ -51,3 +51,13 @@ Section 02. Next.js Fundamentals & Project Start
 -u folder images dodajemo cetiri slike
 -u folderu public kreiramo folder images i properties
 -u folder properties dodajemo slike nekretnina
+
+10. File-Based Routing
+-u folderu app kreiramo folder properties i komponentu page.jsx 
+-u komponenti/page.tsx kreiramo funkciju PropertiesPage()
+-u folderu properties kreiramo folder add i komponentu page.jsx
+-u komponenti properties/add/page.tsx kreiramo funkciju AddPropertyPage() 
+-u folderu properties kreiramo folder [id] i komponentu page.jsx
+-u komponenti properties/[id]/page.tsx kreiramo funkciju PropertyPage()
+-u komponentu app/page.tsx importujemo komponentu Link iz paketa Next Link
+-komponenti Link dodajemo prop href
