@@ -118,3 +118,20 @@ Section 02. Next.js Fundamentals & Project Start
 -u komponentu InfoBoxes.jsx importujemo komponentu InfoBox
 -kreiramo komponentu Footer.jsx
 -u komponentu layout.jsx importujemo komponentu Footer.jsx
+
+17. Properties Page & PropertyCard Component
+-kreiramo properties.json fajl
+-u komponentu properties/page.jsx importujemo niz properties
+-kreiramo roditelj section element sa Tailwind CSS klasama
+-u section elementu kreiramo div element sa Tailwind CSS klasama
+-u div element dodajemo uslov ternani operator properties.length === 0
+-u prvi uslov dodajemo p element da nema nekretnina
+-u drugi uslov dodajemo metodu properties.map()
+-u folderu components kreiramo komponentu PropertyCard.jsx
+-u komponenti PropertyCard.jsx, funkciji PropertyCard() dodajemo parametar destruktuirani prop property
+-importujemo komponente Image i Link
+-importujemo React ikonice
+-u jsx-u kreiramo HTML elemente sa Tailwind CSS klasama i dinamicki prikazujemo podatke
+-u komponentu properties/page.jsx importujemo komponentu PropertyCard.jsx
+-u metodu properties.map() dodajemo komponentu PropertyCard sa prop key i property
+-u komponenti PropertyCard.jsx kreiramo funkciju getRateDisplay()
