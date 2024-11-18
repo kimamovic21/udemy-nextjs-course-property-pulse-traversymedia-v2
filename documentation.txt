@@ -75,3 +75,10 @@ Section 02. Next.js Fundamentals & Project Start
 -importujemo i kreiramo funkciju usePathname()
 -vrijednost funkcije usePathname() pohranjujemo u varijablu const pathname
 -u komponenti properties/[id]/page.tsx, funkciji PropertyPage() dodajemo parametar destruktuirani prop params
+
+13. Navbar Component Start
+-kreiramo folder components i komponentu Navbar.jsx
+-u komponentu layout.jsx importujemo komponentu Navbar.jsx
+-u komponenti Navbar.jsx, u jsx-u kreiramo HTML elemente sa Tailwind CSS klasama
+-u komponentu Navbar.jsx importujemo komponentu Images iz paketa Next Image
+-importujemo slike logo i profileDefault
