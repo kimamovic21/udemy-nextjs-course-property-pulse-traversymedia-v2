@@ -8,3 +8,5 @@ Section 01. Introduction
 02. PropertyPulse Project Demo
 
 03. What is Next.js ?
+
+04. Next.js Features
