@@ -6,3 +6,5 @@ Section 01. Introduction
 01. Welcome To The Course
 
 02. PropertyPulse Project Demo
+
+03. What is Next.js ?
