@@ -36,7 +36,7 @@ Section 02. Next.js Fundamentals & Project Start
 -u komponenti layout.jsx kreiramo funkciju MainLayout()
 -funkciji MainLayout() dodajemo parametar destruktuirani prop children
 -kreiramo komponentu page.jsx
--u komponenti page.tsx kreiramo funkciju HomePage()
+-u komponenti page.jsx kreiramo funkciju HomePage()
 -kreiramo folder assets
 -u folderu assets kreiramo folder styles i globals.css fajl
 -u globals.css fajl dodajemo tri Tailwind CSS direktive
@@ -54,12 +54,12 @@ Section 02. Next.js Fundamentals & Project Start
 
 10. File-Based Routing
 -u folderu app kreiramo folder properties i komponentu page.jsx 
--u komponenti/page.tsx kreiramo funkciju PropertiesPage()
+-u komponenti/page.jsx kreiramo funkciju PropertiesPage()
 -u folderu properties kreiramo folder add i komponentu page.jsx
--u komponenti properties/add/page.tsx kreiramo funkciju AddPropertyPage() 
+-u komponenti properties/add/page.jsx kreiramo funkciju AddPropertyPage() 
 -u folderu properties kreiramo folder [id] i komponentu page.jsx
--u komponenti properties/[id]/page.tsx kreiramo funkciju PropertyPage()
--u komponentu app/page.tsx importujemo komponentu Link iz paketa Next Link
+-u komponenti properties/[id]/page.jsx kreiramo funkciju PropertyPage()
+-u komponentu app/page.jsx importujemo komponentu Link iz paketa Next Link
 -komponenti Link dodajemo prop href
 
 11. Server vs Client Components
@@ -74,7 +74,7 @@ Section 02. Next.js Fundamentals & Project Start
 -vrijednost funkcije useSearchParams() pohranjujemo u varijablu const searchParams
 -importujemo i kreiramo funkciju usePathname()
 -vrijednost funkcije usePathname() pohranjujemo u varijablu const pathname
--u komponenti properties/[id]/page.tsx, funkciji PropertyPage() dodajemo parametar destruktuirani prop params
+-u komponenti properties/[id]/page.jsx, funkciji PropertyPage() dodajemo parametar destruktuirani prop params
 
 13. Navbar Component Start
 -kreiramo folder components i komponentu Navbar.jsx
@@ -135,3 +135,14 @@ Section 02. Next.js Fundamentals & Project Start
 -u komponentu properties/page.jsx importujemo komponentu PropertyCard.jsx
 -u metodu properties.map() dodajemo komponentu PropertyCard sa prop key i property
 -u komponenti PropertyCard.jsx kreiramo funkciju getRateDisplay()
+
+18. Home Property Listings
+-u folderu components kreiramo komponentu HomeProperties.jsx
+-u komponentu HomeProperties.jsx importujemo json fajl properties
+-importujemo komponente Link i PropertyCard.jsx
+-u komponentu app/page.jsx importujemo komponentu HomeProperties.jsx
+-u komponenti HomeProperties.jsx kreiramo varijablu const recentProperties
+-u komponenti HomeProperties.jsx, u jsx-u dodajemo ternarni uslov recentProperties === 0 
+-prvi uslov u ternarnom operatoru je p element ukoliko nema nekretnina
+-drugi uslov u ternarnom operatoru je metoda recentProperties?.map()
+-u funkciju map() dodajemo komponentu PropertyCard sa prop key i property
