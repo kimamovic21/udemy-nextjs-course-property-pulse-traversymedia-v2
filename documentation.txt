@@ -19,3 +19,5 @@ Section 01. Introduction
 -VS Code Code extension Spell Checker
 -VS Code Code extension Simple React Snippets
 VS Code Code extension Prettier - Code formatter
+
+06. Project Theme Files
