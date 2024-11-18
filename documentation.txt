@@ -63,3 +63,15 @@ Section 02. Next.js Fundamentals & Project Start
 -komponenti Link dodajemo prop href
 
 11. Server vs Client Components
+
+12. Client Components & Navigation Hooks
+-u komponentu [id]/page.jsx dodajemo direktivu 'use client'
+-importujemo i kreiramo funkciju useRouter iz paketa Next Navigation
+-vrijednost funkcije useRouter() pohranjujemo u varijablu const router
+-importujemo i kreiramo funkciju useParams()
+-vrijednost funkcije useParams() pohranjujemo u destruktuiranu varijablu const { id }
+-importujemo i kreiramo funkciju useSearchParams()
+-vrijednost funkcije useSearchParams() pohranjujemo u varijablu const searchParams
+-importujemo i kreiramo funkciju usePathname()
+-vrijednost funkcije usePathname() pohranjujemo u varijablu const pathname
+-u komponenti properties/[id]/page.tsx, funkciji PropertyPage() dodajemo parametar destruktuirani prop params
