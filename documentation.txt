@@ -18,6 +18,15 @@ Section 01. Introduction
 -otvorimo web stranicu: https://www.mongodb.com/
 -VS Code Code extension Spell Checker
 -VS Code Code extension Simple React Snippets
-VS Code Code extension Prettier - Code formatter
+-VS Code Code extension Prettier - Code formatter
 
 06. Project Theme Files
+
+
+Section 02. Next.js Fundamentals & Project Start
+
+07. New Project & Folder Structure
+-dodajemo folder _theme_files
+-otvorimo web stranicu: https://nextjs.org/
+-u terminalu instaliramo Next.js aplikaciju sa komandom npx create-next-app@14.1.0
+-u tailwind.config.js fajl u konfiguracioni objekt extend dodajemo objekte fontFamily i gridTemplateCulumns
