@@ -227,3 +227,27 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 -u funkciju HomeProperties() dodajemo metodu await connectDB()
 -dodajemo metodu await Property.find()
 -vrijednost metode await Property.find() pohranjujemo u varijablu const recentProperties
+
+25. Single Property & Header Image
+-u komponentu [id]/page.jsx importujemo funkciju connectDB i model Property
+-funkciji PropertyPage() dodajemo asinhronost
+-u funkciju PropertyPage() dodajemo metodu await connectDB()
+-dodajemo metodu await Property.findById()
+-vrijednost metode await Property.findById() pohranjujemo u varijablu const property
+-u jsx-u kreiramo section roditelj element
+-u folderu components kreiramo komponentu PropertyHeaderImage.jsx
+-u komponentu properties/page.jsx importujemo komponentu PropertyHeaderImage.jsx
+-u jsx-u dodajemo komponentu PropertyHeaderImage sa prop image
+-u komponenti PropertyHeaderImage.jsx kreiramo roditelj section element 
+-u section elementu kreiramo HTML elemente sa Tailwind klasama
+-importujemo komponentu Image
+-funkciji PropertyHeaderImage() dodajemo parametar destruktuirani prop image
+-u jsx-u komponenti Image dodajemo prop src, alt, className, width, height i sizes
+-u komponenti properties/[id]/page.jsx, ispod komponente PropertyHeaderImage kreiramo section element
+-u section elementu kreiramo div element sa Tailwind CSS klasama
+-importujemo komponentu Link 
+-u div element dodajemo komponentu Link sa prop href i className
+-importujemo React ikonicu FaArrowLeft
+-u komponentu Link dodajemo komponentu FaArrowLeft
+-komponenti FaArrowLeft dodajemo prop className
+-u drugom section elementu kreiramo dva div elementa sa Tailwind CSS klasama
