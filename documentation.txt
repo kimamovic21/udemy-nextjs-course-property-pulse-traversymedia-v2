@@ -1,7 +1,7 @@
 Udemy Nextjs Course Property Pulse Traversymedia
 
 
-Section 01. Introduction
+Section 01: Introduction
 
 01. Welcome To The Course
 
@@ -23,7 +23,7 @@ Section 01. Introduction
 06. Project Theme Files
 
 
-Section 02. Next.js Fundamentals & Project Start
+Section 02: Next.js Fundamentals & Project Start
 
 07. New Project & Folder Structure
 -dodajemo folder _theme_files
@@ -293,3 +293,8 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 -dodajemo izjavu return new Response()
 -u blok koda catch dodajemo izjavu return new Response()
 -u pretrazivacu otvorimo link: http://localhost:3000/api/properties/673dfdbc4d14677f2db0c3ca
+
+
+Section 04: Next Auth, Sessions & Google Providers
+
+28. What Is Next Auth ?
