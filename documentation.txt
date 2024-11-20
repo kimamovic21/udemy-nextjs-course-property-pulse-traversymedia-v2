@@ -269,3 +269,27 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 -u prvi span element dodajemo komponentu FaCheck sa Tailwind CSS klasama
 -u drugi span element dinamicki prikazujemo varijablu amenity
 -kreiramo div element sa id-em map
+
+27. Intro to API Routes
+-u folderu api kreiramo folder properties i route.ts fajl
+-u route.ts fajlu kreiramo i eksportujemo asinhronu funkciju GET()
+-u funkciju GET(), dodajemo u izjavu return new Response()
+-importujemo funkciju connectDB i model Property
+-u funkciju GET() dodajemo blokove koda try i catch
+-u blok koda try dodajemo metodu await connectDB()
+-dodajemo metodu await Property.find() 
+-dodajemo izjavu return new Response()
+-vrijednost metode await Property.find() pohranjujemo u varijablu const properties
+-u blok koda catch dodajemo izjavu return new Response()
+-u pretrazivacu otvorimo link: http://localhost:3000/api/properties
+-u folderu properties kreiramo folder [id]
+-u folderu properties/[id] kreiramo route.ts fajl
+-u [id]/route.ts fajlu kreiramo i eksportujemo asinhronu funkciju GET()
+-funkciju GET dodajemo parametre request i params
+-u funkciju GET dodajemo blokove koda try - catch
+-u blok koda try dodajemo metodu await Property.findById()
+-vrijednost metode await Property.findById() pohranjujemo u varijablu const property
+-dodajemo uslov if (!property)
+-dodajemo izjavu return new Response()
+-u blok koda catch dodajemo izjavu return new Response()
+-u pretrazivacu otvorimo link: http://localhost:3000/api/properties/673dfdbc4d14677f2db0c3ca
