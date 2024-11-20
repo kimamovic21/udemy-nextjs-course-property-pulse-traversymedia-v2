@@ -175,3 +175,21 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 -u bazi propertypulse kreiramo kolekciju properties
 -kreiramo properties-mongo.json fajl
 -properties-mongo.json fajl importujemo u kolekciju properties
+
+22. Database Connection & Mongoose
+-u terminalu instaliramo pakete MongoDB i Mongoose
+-u terminalu ukucamo komandu npm i mongodb mongoose
+-kreiramo folder config
+-u folderu config kreiramo database.js fajl
+-u database.js fajl importujemo instancu mongoose iz paketa Mongoose 
+-kreiramo varijablu let connected
+-kreiramo asinhronu funkciju connectDB()
+-u funkciju connectDB() dodajemo metodu mongoose.set()
+-funkciji set() dodajemo dva argumenta: 'strictQuery' i true
+-dodajemo uslov if (connected)
+-dodajemo blokove koda try - catch
+-u bloku koda try dodajemo metodu await mongoose.connect()
+-redeklarisemo varijablu connected = true
+-u bloku koda catch ispisujemo eventualnu error poruku
+-u terminalu instaliramo paket Colors sa komandom npm i colors
+-u komponentu app/page.jsx importujemo funkciju connectDB iz foldera config

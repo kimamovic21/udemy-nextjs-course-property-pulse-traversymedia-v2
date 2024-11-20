@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "colors": "^1.4.0",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.2",
     "next": "14.1.0",
     "property-pulse": "file:",
     "react": "^18",
