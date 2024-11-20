@@ -158,3 +158,14 @@ Section 02. Next.js Fundamentals & Project Start
 -kreiramo varijablu objekt const override
 -u jsx-u dodajemo komponentu ClipLoader sa prop color, loading, cssOverride, size, aria-label i data-testid
 -u prop cssOverride proslijedujemo vrijednost varijable override
+
+
+Section 03: MongoDB Database, Server Components & Fetching Properties
+
+20. Create MongoDB Database
+-otvorimo web stranicu Mongo Atlas: https:/www.mongodb.com
+-na web stranici Mongo Atlas kreiramo projekt
+-kreiramo bazu podataka propertypulse i kolekciju
+-kreiramo fajlove .env.local i example.env
+-u env.local fajlu kreiramo varijable NEXT_PUBLIC_DOMAIN, NEXT_PUBLIC_API_DOMAIN i MONGODB_URI
+-u example.env fajl dodajemo primjer varijabli koje je potrebno kreirati
