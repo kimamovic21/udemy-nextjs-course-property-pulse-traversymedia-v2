@@ -251,3 +251,21 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 -u komponentu Link dodajemo komponentu FaArrowLeft
 -komponenti FaArrowLeft dodajemo prop className
 -u drugom section elementu kreiramo dva div elementa sa Tailwind CSS klasama
+
+26. Property Details Component
+-u folderu components kreiramo komponentu PropertyDetails.jsx
+-importujemo sest React ikonice
+-umjesto i elemenata dodajemo React ikonice
+-funkciji PropertyDetails.jsx dodajemo parametar destruktuirani prop property
+-u jsx-u kreiramo main elemente kao roditelj element
+-u main elementu kreiramo HTML elementee sa Tailwind CSS klasama
+-u komponentu properties/[id]/page.jsx importujemo komponentu PropertyDetails.jsx
+-u jsx-u komponenti PropertyDetails dodajemo prop property
+-u jsx-u dinamicki prikazujemo podatke iz prop property
+-u jsx-u dodajemo tri ternarna uslova property?.rates ? (...) : (...)
+-u ul element dodajemo metodu property?.amenities?.map()
+-u funkciji map() kreiramo li element sa prop key
+-u li element kreiramo dva span element 
+-u prvi span element dodajemo komponentu FaCheck sa Tailwind CSS klasama
+-u drugi span element dinamicki prikazujemo varijablu amenity
+-kreiramo div element sa id-em map
