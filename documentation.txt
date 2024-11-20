@@ -193,3 +193,25 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 -u bloku koda catch ispisujemo eventualnu error poruku
 -u terminalu instaliramo paket Colors sa komandom npm i colors
 -u komponentu app/page.jsx importujemo funkciju connectDB iz foldera config
+
+23. Property & User Models
+-kreiramo folder models
+-u folderu models kreiramo User.js fajl
+-u User.js fajl importujemo funkcije Schema, model i models iz paketa Mongoose
+-kreiramo funkciju new Schema({ ... })
+-vrijednost funkcije new Schema() pohranjujemo u varijablu const UserSchema
+-u funkciju Schema() dodajemo objekte: email, username, image i niz bookmarks
+-dodajemo objekt timestamp
+-kreiramo varijablu const User
+-varijablu User eksportujemo kao default
+-u folderu models kreiramo Property.js fajl
+-u Property.js fajl importujemo funkcije Schema, model i models iz paketa Mongoose
+-kreiramo funkciju new Schema({ ... })
+-vrijednost funkcije new Schema() pohranjujemo u varijablu const PropertySchema
+-u funkciji Schema() kreiramo objekte: owner, name, type, description, location, beds, baths, square_feet, niz amenities, rates, seller_info, niz images i is_Featured
+-u objektu location kreiramo objekte: street, city, state i zipcode
+-u objektu rates kreiramo objekte: nightly, weekly i monthly
+-u objektu seller_info kreiramo objekte: name, email i phone
+-dodajemo objekt timestamp 
+-kreiramo varijablu const Property
+-varijablu const Property eksportujemo kao default
