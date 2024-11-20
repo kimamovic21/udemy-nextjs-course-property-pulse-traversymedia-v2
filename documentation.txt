@@ -169,3 +169,9 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 -kreiramo fajlove .env.local i example.env
 -u env.local fajlu kreiramo varijable NEXT_PUBLIC_DOMAIN, NEXT_PUBLIC_API_DOMAIN i MONGODB_URI
 -u example.env fajl dodajemo primjer varijabli koje je potrebno kreirati
+
+21. MongoDB Compass & Importing Data
+-u MongoDB Compass bazi podataka kreiramo bazu sa imenom propertypulse
+-u bazi propertypulse kreiramo kolekciju properties
+-kreiramo properties-mongo.json fajl
+-properties-mongo.json fajl importujemo u kolekciju properties
