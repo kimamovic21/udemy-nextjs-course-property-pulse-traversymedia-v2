@@ -215,3 +215,15 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 -dodajemo objekt timestamp 
 -kreiramo varijablu const Property
 -varijablu const Property eksportujemo kao default
+
+24. Fetch Data Using Server Component
+-u komponentu properties/page.jsx importujemo model Property
+-importujemo funkciju connectDB iz foldera config
+-funkciji PropertiesPage dodajemo asinhronost
+-dodajemo metodu await Property.find({ }).lean();
+-vrijednost metode Property.find() pohranjujemo u varijablu const properties
+-u komponentu HomeProperties.jsx importujemo funkciju connectDB i model Property
+-funkciji HomeProperties.jsx dodajemo asinhronost
+-u funkciju HomeProperties() dodajemo metodu await connectDB()
+-dodajemo metodu await Property.find()
+-vrijednost metode await Property.find() pohranjujemo u varijablu const recentProperties
