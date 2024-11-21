@@ -298,3 +298,10 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 Section 04: Next Auth, Sessions & Google Providers
 
 28. What Is Next Auth ?
+
+29. Google OAuth Setup
+-otvorimo link https://console.cloud.google.com/
+-kreiramo novi projekt 
+-u .env.local fajlu kreiramo varijable GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, NEXTAUTH_URL, NEXTAUTH_URL_INTERNAL i NEXTAUTH_SECRET
+-u terminalu ukucamo komandu openssl rand -base64 32 da generisemo vrijednost za varijablu NEXTAUTH_SECRET
+-u example.env dodajemo primjer varijabli koje je potrebno kreirati
