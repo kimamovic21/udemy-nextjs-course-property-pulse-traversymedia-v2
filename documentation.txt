@@ -385,3 +385,10 @@ Section 04: Next Auth, Sessions & Google Providers
 -u komponenti Navbar.jsx, button elementu Sign Out dodajemo dogadaj onClick
 -u dogadaj onClick proslijedujemo anonimnu funkciju
 -u anonimnu funkciju dodajemo funkcije setIsProfileMenuOpen(false) i signOut()
+
+35. Protecting Routes
+-kreiramo middleware.js fajl
+-u middleware.js fajlu eksportujemo funkciju default iz paketa Next Auth
+-kreiramo i eksportujemo konfiguracioni objekt varijablu const config
+-u objekt config dodajemo konfiguracioni niz matcher
+-u niz matcher dodajemo cetiri rute
