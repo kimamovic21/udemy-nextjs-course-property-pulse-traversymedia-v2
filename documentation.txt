@@ -380,3 +380,8 @@ Section 04: Next Auth, Sessions & Google Providers
 -u jsx-u, u komponenti Image za korisnika, proslijedujemo u prop src vrijednost varijable profileImage
 -komponenti Image dodajemo prop width i height
 -u prop alt proslijedujemo dinamicku varijablu name
+
+34. Sign Out Button
+-u komponenti Navbar.jsx, button elementu Sign Out dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo anonimnu funkciju
+-u anonimnu funkciju dodajemo funkcije setIsProfileMenuOpen(false) i signOut()
