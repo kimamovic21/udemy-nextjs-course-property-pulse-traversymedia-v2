@@ -334,3 +334,24 @@ Section 04: Next Auth, Sessions & Google Providers
 -u komponentu SessionProvider dodajemo prop children
 -u komponentu layout.jsx importujemo komponentu AuthProvider.jsx
 -u jsx-u, dodajemo komponentu AuthProvider kao roditelj element
+
+31. Sign In Button
+-u komponentu Navbar.jsx importujemo funkcije signIn, signOut, useSession i getProviders iz paketa Next Auth
+-pozivamo funkciju useSession()
+-iz funkcije useSession() destruktuiramo varijablu const { data: session }
+-izbrisemo state varijablu isLoggedIn i set funkciju setIsLoggedIn
+-u komponenti Navbar.jsx u return izjavi umjesto uslova isLoggedIn && (...) dodajemo session && (...)
+-importujemo i pozivamo funkciju useEffect()
+-funkciji useEffect() dodajemo dva argumenta: anonimnu funkciju i prazan niz
+-u anonimnoj funkciji kreiramo asinhronu funkciju setAuthProviders
+-u funkciju setAuthProviders() dodajemo metodu await getProviders()
+-vrijednost metode await getProviders pohranjujemo u varijablu res
+-kreiramo state varijablu providers i set funkciju setProviders
+-u funkciju setAuthProviders() pozivamo funkciju setProviders(res)
+-u anonimnoj funkciji pozivamo funkciju setAuthProviders()
+-u return izjavi dodajemo metodu {providers && Object?.values(providers)?.map()}
+-u funkciji map() kreiramo button element
+-button elementu dodajemo prop key, className i onClick
+-u button element dodajemo React ikonicu FaGoogle
+-u dogadaj onClick proslijedujemo anonimnu funkciju
+-u anonimnu funkciju proslijedujemo funkciju signIn(provider.id)
