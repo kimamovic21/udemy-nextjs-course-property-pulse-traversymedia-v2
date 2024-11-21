@@ -305,3 +305,32 @@ Section 04: Next Auth, Sessions & Google Providers
 -u .env.local fajlu kreiramo varijable GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, NEXTAUTH_URL, NEXTAUTH_URL_INTERNAL i NEXTAUTH_SECRET
 -u terminalu ukucamo komandu openssl rand -base64 32 da generisemo vrijednost za varijablu NEXTAUTH_SECRET
 -u example.env dodajemo primjer varijabli koje je potrebno kreirati
+
+30. Next Auth & Provider Setup
+-otvorimo link https://next-auth.js.org/
+-u terminalu instaliramo paket Next Auth sa komandom npm i next-auth@4
+-u folderu app/api kreiramo folder auth
+-u folderu auth kreiramo folder [...nextauth]
+-u folderu [...nextauth] kreiramo route.js fajl
+-kreiramo folder utils
+-u folderu utils kreiramo authOptions.js fajl
+-u authOptions.js fajl importujemo funkciju GoogleProvider iz paketa Next Auth¸
+-kreiramo i eksportujemo konfiguracioni objekt authOptions
+-u konfiguracionom objektu authOptions kreiramo konfiguracione niz providers i konfiguracioni objekt callbacks
+-u niz providers dodajemo funkciju GoogleProvider() sa konfiguracionim objektom
+-u objektu callbacks kreiramo asinhrone funkcije signIn() i session()
+-funkciji signIn() dodajemo parametar destruktuirani prop profile
+-funkciji session() dodajemo parametar destruktuirani prop session
+-u app/api/auth/[...nextauth] folderu u route.js fajl importujemo objekt authOptions iz foldera utils
+-importujemo i pozivamo funkciju NextAuth iz paketa Next Auth
+-vrijednost funkcije NextAuth(authOptions) pohranjujemo u varijablu const handler
+-eksportujemo funkciju handler kao GET i POST
+-u folderu components kreiramo komponentu AuthProvider.jsx
+-u komponentu AuthProvider.jsx dodajemo direktivu 'use client'
+-importujemo komponentu SessionProvider iz paketa Next Auth
+-kreiramo i eksportujemo funkciju AuthProvider() kao default
+-funkciji AuthProvider() dodajemo parametar destruktuirani prop children
+-u jsx-u dodajemo komponentu SessionProvider sa otvorenim i zatvorenim tagom
+-u komponentu SessionProvider dodajemo prop children
+-u komponentu layout.jsx importujemo komponentu AuthProvider.jsx
+-u jsx-u, dodajemo komponentu AuthProvider kao roditelj element
