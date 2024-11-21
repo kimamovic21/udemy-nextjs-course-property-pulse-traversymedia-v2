@@ -355,3 +355,20 @@ Section 04: Next Auth, Sessions & Google Providers
 -u button element dodajemo React ikonicu FaGoogle
 -u dogadaj onClick proslijedujemo anonimnu funkciju
 -u anonimnu funkciju proslijedujemo funkciju signIn(provider.id)
+
+32. Save User to Database & Session
+-u authOptions.js fajl importujemo funkciju connectDB() i model User
+-u funkciju signIn() dodajemo funkciju await connectDB()
+-dodajemo metodu await User.findOne()
+-vrijednost metode await User.findOne() pohranjujemo varijablu const userExists
+-dodajemo uslov if (!userExists)
+-u uslovu if (!userExists) kreiramo varijablu const username 
+-dodajemo metodu await User.create()
+-u funkciju create() dodajemo polja key - value parove za email, username i image
+-dodajemo izjavu return true
+-u funkciji session() dodajemo metodu await User.findOne()
+-vrijednost metode metode await User.findOne() pohranjujemo u varijablu const user
+-dodajemo metodu session.user.id
+-dodajemo izjavu return session
+-registrujemo se i prijavimo se u aplikaciji
+-provjerimo da li je korisnik uspjesno sacuvan u bazi podataka MongoDB
