@@ -372,3 +372,11 @@ Section 04: Next Auth, Sessions & Google Providers
 -dodajemo izjavu return session
 -registrujemo se i prijavimo se u aplikaciji
 -provjerimo da li je korisnik uspjesno sacuvan u bazi podataka MongoDB
+
+33. Profile Image
+-u next.config.mjs fajl dodajemo konfiguracioni objekt images
+-u konfiguracioni objekt images dodajemo niz remotePatterns
+-u komponenti Navbar.jsx kreiramo varijablu const profileImage
+-u jsx-u, u komponenti Image za korisnika, proslijedujemo u prop src vrijednost varijable profileImage
+-komponenti Image dodajemo prop width i height
+-u prop alt proslijedujemo dinamicku varijablu name
