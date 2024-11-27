@@ -520,3 +520,25 @@ Section 05: Server Actions & Creating Properties
 -u div element dodajemo metodu images.map()
 -u funkciju map() dodajemo komponentu Image
 -u funkciju map(), div elementu dodajemo dinamicku klasu ako nekretnina ima 3 slike
+
+
+Section 06: Profile & Manage Properties
+
+46. User Profile Info Display
+-u folderu app kreiramo folder profile i komponentu page.jsx
+-u komponenti profile/page.jsx, u jsx-u kreiramo section roditelj element
+-u section elementu kreiramo HTML elemente sa Tailwind CSS klasama
+-importujemo funkciju getSessionUser iz getServerSession.js fajla
+-importujemo funkciju connectDB iz database.js fajla
+-importujemo komponentu Image iz paketa Next Image
+-importujemo model Property iz Property.js fajla
+-importujemo sliku profileDefault iz foldera images
+-funkciji ProfilePage() dodajemo asinhronost
+-u funkciju ProfilePage() dodajemo metodu await connectDB()
+-dodajemo metodu await getSessionUser()
+-vrijednost metode await getSessionUser() pohranjujemo u varijablu const sessionUser
+-destruktuiramo varijablu const { userId } iz varijable sessionUser
+-dodajemo uslov if (!userId)
+-u uslov if (!userId) dodajemo funkciju throw new Error()
+-u jsx-u komponenti Image dodajemo prop className, src, alt, width i height
+-u prop src dodajemo dinamicku vrijednost za sliku
