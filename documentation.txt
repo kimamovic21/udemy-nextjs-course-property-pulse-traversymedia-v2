@@ -439,3 +439,19 @@ Section 05: Server Actions & Creating Properties
 
 40. Remove Try/Catch From getSessionUser
 -u getSessionUser.js fajlu brisemo blokove koda try - catch
+
+41. Submit Property To Database
+-u addProperty.js fajl importujemo funkcije redirect, revalidatePath, getSessionUser i connectDB
+-importujemo model Property iz Property.js fajla
+-u funkciju addProperty() dodajemo metodu await connectDB()
+-dodajemo metodu await getSessionUser()
+-vrijednost metode await getSessionUser() pohranjujemo u varijablu const sessionUser
+-dodajemo uslov if (!sessionUser || !sessionUser.userId)
+-u uslov if dodajemo funkciju throw new Error()
+-iz varijable sessionUser destruktuiramo varijablu const { userId }
+-u objekt propertyData dodajemo key - value par owner i userId
+-dodajemo metodu new Property(propertyData)
+-vrijednost metode new Property(propertyData) pohranjujemo u varijablu const newProperty
+-dodajemo metodu await newProperty.save()
+-dodajemo funkcije revalidatePath('/', 'layout') i redirect()
+-otvorimo link http://localhost:3000/properties/add i kreiramo nekretninu
