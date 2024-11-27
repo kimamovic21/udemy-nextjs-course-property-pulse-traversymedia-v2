@@ -505,3 +505,18 @@ Section 05: Server Actions & Creating Properties
 -u bazi podataka MongoDB izbrisemo nekretnine koje nemaju slike sacuvane na servisu Cloudinary 
 -u komponenti PropertyCard.jsx pravimo izmjene u komponenti Image, u prop src
 -u komponenti PropertyHeaderImage.jsx pravimo izmjene u komponenti Image, u prop src
+
+45. PropertyImages Component
+-u folderu components kreiramo komponentu PropertyImages.jsx
+-u komponenti PropertyImages.jsx, funkciji PropertyImages() dodajemo parametar destruktuirani prop images
+-u jsx-u kreiramo section roditelj element
+-u komponentu properties/[id]/page.jsx importujemo komponentu PropertyImages
+-u jsx-u dodajemo komponentu PropertyImages sa prop images
+-u komponentu PropertyImages.jsx importujemo komponentu Image
+-u section elementu kreiramo div element sa Tailwind CSS klasama
+-u div element ternani uslov images.length === 1
+-u prvi dio ternarnog uslova dodajemo komponentu Image
+-u drugi dio ternarnog uslova kreiramo div element sa Tailwind CSS Grid klasama
+-u div element dodajemo metodu images.map()
+-u funkciju map() dodajemo komponentu Image
+-u funkciju map(), div elementu dodajemo dinamicku klasu ako nekretnina ima 3 slike
