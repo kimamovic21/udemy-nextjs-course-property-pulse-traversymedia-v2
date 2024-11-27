@@ -499,3 +499,9 @@ Section 05: Server Actions & Creating Properties
 -dodajemo metodu propertyData.images = imageUrls
 -otvorimo rutu http://localhost:3000/properties/add i kreiramo nekretninu
 -na web stranici Cloudinary otvorimo folder udemy-nextjs-propertypulse da provjerimo da li su se slike sacuvale
+
+44. PropertyCard & Header Images
+-u next.config.mjs fajl dodajemo konfiguracioni objekt za Cloudinary slike 
+-u bazi podataka MongoDB izbrisemo nekretnine koje nemaju slike sacuvane na servisu Cloudinary 
+-u komponenti PropertyCard.jsx pravimo izmjene u komponenti Image, u prop src
+-u komponenti PropertyHeaderImage.jsx pravimo izmjene u komponenti Image, u prop src
