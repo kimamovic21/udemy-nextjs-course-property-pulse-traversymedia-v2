@@ -466,3 +466,36 @@ Section 05: Server Actions & Creating Properties
 -u section elementu kreiramo HTML elemente sa Tailwind CSS klasama
 -u p elementu dinamicki prikazujemo vrijednost varijable error
 -varijabli error dodajemo funkciju toString()
+
+43. Cloudinary Image Upload
+-otvorimo web stranicu https://cloudinary.com/ i kreiramo racun
+-u .env.local fajlu kreiramo varijable CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY i CLOUDINARY_API_SECRET
+-u example.env fajl dodajemo primjer varijabli koje je potrebno kreirati
+-u terminalu instaliramo paket Cloudinary sa komandom npm i cloudinary
+-na servisu Cloudinary kreiramo folder udemy-nextjs-propertypulse
+-u folderu config kreiramo cloudinary.js fajl
+-u cloudinary.js fajl importujemo instancu cloudinary
+-varijabli cloudinary dodajemo funkciju config()
+-u funkciju config() dodajemo konfiguracioni objekt
+-u konfiguracioni objekt dodajemo varijable cloud_name, api_key i api_secret
+-varijablu cloudinary eksportujemo kao default
+-u addProperty.js fajl importujemo varijablu cloudinary iz cloudinary.js fajla
+-kreiramo varijablu prazan niz const imageUrls 
+-dodajemo petlju for (const imageFile of images)
+-u petlju for dodajemo metodu await imageFile.arrayBuffer()
+-vrijednost metode await imageFile.arrayBuffer() pohranjujemo u varijablu const imageBuffer
+-dodajemo metodu Array.from()
+-vrijednost metode Array.from() pohranjujemo u varijablu const imageArray
+-dodajemo metodu Buffer.from(imageArray)
+-vrijednost metode Buffer.from(imageArray) pohranjujemo u varijablu const imageData
+-dodajemo metodu imageData.toString()
+-vrijednost metode imageData.toString() pohranjujemo u varijablu const imageBase64
+-dodajemo metodu await cloudinary.uploader.upload()
+-funkciji upload() dodajemo dva argumenta
+-prvi argument je ime link slike
+-drugi argument je konfiguracioni objekt u kojem se nalazi ime foldera 
+-vrijednost metode await cloudinary.uploader.upload() pohranjujemo u varijablu const result
+-dodajemo metodu imageUrls.push(result.secure_url)
+-dodajemo metodu propertyData.images = imageUrls
+-otvorimo rutu http://localhost:3000/properties/add i kreiramo nekretninu
+-na web stranici Cloudinary otvorimo folder udemy-nextjs-propertypulse da provjerimo da li su se slike sacuvale
