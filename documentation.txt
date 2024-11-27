@@ -417,3 +417,10 @@ Section 05: Server Actions & Creating Properties
 -kliknemo dugme Add Property
 -u addProperty.js fajlu, funkciji addProperty() dodajemo parametar formData
 -u konzoli ispisujemo vrijednost za metodu formData
+
+38. Format Property Data
+-u addProperty.js fajlu, u funkciji addProperty(), vrijednost metode formData.getAll('amenities') pohranjujemo u varijable const amenities
+-vrijednost metode formData.getAll('images') pohranjujemo u varijable const images
+-metodi formData() za slike dodajemo funkcije filter() i map()
+-kreiramo objekt varijablu const propertyData
+-u objektu propertyData dodajemo podatke o nekretnini
