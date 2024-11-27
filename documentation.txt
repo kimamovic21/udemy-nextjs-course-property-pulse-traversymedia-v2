@@ -455,3 +455,14 @@ Section 05: Server Actions & Creating Properties
 -dodajemo metodu await newProperty.save()
 -dodajemo funkcije revalidatePath('/', 'layout') i redirect()
 -otvorimo link http://localhost:3000/properties/add i kreiramo nekretninu
+
+42. Custom Error Page
+-u folderu app kreiramo komponentu error.jsx 
+-u komponentu error.jsx dodajemo direktivu 'use client'
+-importujemo komponentu Link i React ikonicu FaExclamationCircle
+-kreiramo i eksportujemo funkciju ErrorPage() kao default
+-funkciji ErrorPage() dodajemo parametar destruktuirani prop { error }
+-u jsx-u kreiramo section element kao roditelj element
+-u section elementu kreiramo HTML elemente sa Tailwind CSS klasama
+-u p elementu dinamicki prikazujemo vrijednost varijable error
+-varijabli error dodajemo funkciju toString()
