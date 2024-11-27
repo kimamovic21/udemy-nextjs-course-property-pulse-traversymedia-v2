@@ -424,3 +424,15 @@ Section 05: Server Actions & Creating Properties
 -metodi formData() za slike dodajemo funkcije filter() i map()
 -kreiramo objekt varijablu const propertyData
 -u objektu propertyData dodajemo podatke o nekretnini
+
+39. Get User From Session
+-u folderu utils kreiramo getSessionUser.js fajl
+-u getSessionUser.js fajl importujemo funkciju getServerSession iz paketa Next Auth
+-importujemo varijablu objekt authOptions iz authOptions.js fajla
+-kreiramo i eksportujemo asinhronu funkciju getSessionUser()
+-u funkciju getSessionUser() dodajemo blokove koda try - catch
+-u blok koda try dodajemo metodu await getServerSession(authOptions)
+-vrijednost metode await getServerSession(authOptions) pohranjujemo u varijablu const session
+-dodajemo ulsov if (!session || !session.user)
+-u blok koda try dodajemo izjavu return objekt i key - value vrijednost user i userId
+-u blok koda catch dodajemo console.error(error)
