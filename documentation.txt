@@ -542,3 +542,19 @@ Section 06: Profile & Manage Properties
 -u uslov if (!userId) dodajemo funkciju throw new Error()
 -u jsx-u komponenti Image dodajemo prop className, src, alt, width i height
 -u prop src dodajemo dinamicku vrijednost za sliku
+
+47. User Profile Listings
+-u komponentu profile/page.jsx dodajemo metodu await Property.find()
+-vrijednost metode await Property.find() pohranjujemo u varijablu const properties
+-u folderu components kreiramo komponentu ProfileProperties.jsx
+-u komponentu ProfileProperties.jsx dodajemo direktivu 'use client'
+-funkciji ProfileProperties() dodajemo destruktuirani parametar properties: initialProperties
+-importujemo funkciju useState
+-kreiramo state varijablu const properties i set funkciju setProperties
+-u izjavu return dodajemo metodu properties.map()
+-u funkciji map() kreiramo HTML elemente sa Tailwind CSS klasama
+-u komponentu profile/page.jsx importujemo komponentu ProfileProperties.jsx
+-u jsx-u dodajemo komponentu ProfileProperties sa prop properties
+-u komponentu ProfileProperties.jsx importujemo komponentu Image
+-u jsx-u dinamicki prikazujemo podatke o nekretninama
+-u funkciji map() div elementu dodajemo prop key i className
