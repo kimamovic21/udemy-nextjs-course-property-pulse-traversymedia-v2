@@ -404,3 +404,16 @@ Section 05: Server Actions & Creating Properties
 -u drugi div element dodajemo komponentu PropertyAddForm
 -u komponenti PropertyAddForm.jsx, u jsx-u kreiramo form element kao roditelj element
 -u form elementu kreiramo HTML elemente sa Tailwind CSS klasama
+
+37. Server Actions
+-u folderu app kreiramo folder actions
+-u folderu actions kreiramo addProperty.js fajl
+-u addProperty.js fajl dodajemo direktivu 'use server'
+-u addProperty.js fajlu kreiramo asinhronu funkciju addProperty()
+-asinhronu funkciju addProperty() eksportujemo kao default 
+-u komponentu PropertyAddForm.jsx importujemo funkciju addProperty
+-u jsx-u form elementu dodajemo prop action
+-u prop action proslijedujemo funkciju addProperty
+-kliknemo dugme Add Property
+-u addProperty.js fajlu, funkciji addProperty() dodajemo parametar formData
+-u konzoli ispisujemo vrijednost za metodu formData
