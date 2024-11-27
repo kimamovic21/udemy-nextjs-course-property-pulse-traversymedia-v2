@@ -436,3 +436,6 @@ Section 05: Server Actions & Creating Properties
 -dodajemo ulsov if (!session || !session.user)
 -u blok koda try dodajemo izjavu return objekt i key - value vrijednost user i userId
 -u blok koda catch dodajemo console.error(error)
+
+40. Remove Try/Catch From getSessionUser
+-u getSessionUser.js fajlu brisemo blokove koda try - catch
