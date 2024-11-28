@@ -618,3 +618,12 @@ Section 06: Profile & Manage Properties
 -dodajemo Google Chrome ekstenziju Fake Filler za automatsko popunjavanje forme prilikom kreiranja nekretnine
 -kreiramo jednu nekretninu sa slikama i obrisemo je
 -provjerimo da li su slike obrisane na servisu Cloudinary
+
+50. Toast Notifications
+-otvorimo link: https://www.npmjs.com/package/react-toastify
+-u terminalu instaliramo paket React Toastify sa komandom npm i react-toastify
+-u komponentu layout.jsx importujemo komponentu ToastContainer iz paketa React Toastify
+-dodajemo CSS stil za komponentom ToastContainer
+-u body element dodajemo komponentu ToastContainer
+-u komponentu ProfileProperties importujemo funkciju toast iz paketa React Toastify
+-u funkciju handleDeleteProperty() dodajemo funkciju toast.success()

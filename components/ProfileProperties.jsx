@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import deleteProperty from '@/app/actions/deleteProperty';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,6 +19,8 @@ const ProfileProperties = ({ properties: initialProperties }) => {
     const updatedProperties = properties.filter((property) => property._id !== propertyId);
 
     setProperties(updatedProperties);
+
+    toast.success('Property Deleted Successfully');
   };
 
   return properties.map((property) => (
