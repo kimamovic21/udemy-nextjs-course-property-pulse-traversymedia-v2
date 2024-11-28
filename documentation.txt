@@ -722,3 +722,21 @@ Section 07: Map, Bookmarks & Sharing
 -destruktuiramo varijable const { lat, lng }
 -pozivamo funkcije setLat(lat), setLng(lng) i setViewport()
 -dodajemo uslove if (loading) i if (geocodeError)
+
+54. Mapbox Map Display
+-otvorimo web stranicu: https://www.mapbox.com/
+-u .env.local fajlu kreiramo env varijablu NEXT_PUBLIC_MAPBOX_TOKEN
+-u example.env fajlu kreiramo primjer varijable koju je potrebno kreirati
+-u folderu components kreiramo komponentu Spinner.jsx
+-u komponentu PropertyMap.jsx importujemo komponente Map, Marker i NavigationControl iz paketa React Map GL
+-importujemo komponentu Image
+-importujemo sliku pin iz foldera images
+-importujemo komponentu Spinner.jsx
+-u uslov if (loading) dodajemo komponentu Spinner
+-u jsx-u dodajemo uslov kondicionalno renderovanje !loading && 
+-u uslov za kondicionalno renderovanje dodajemo komponentu Map sa otvorenim i zatvorenim tagom
+-komponenti Map dodajemo prop mapboxAccessToken, mapLib, initialViewState, style i mapStyle
+-u komponentu Map dodajemo komponentu Marker sa otvorenim i zatvorenim tagom
+-komponenti Marker dodajemo prop longitude, latitude i anchor
+-u komponentu Marker dodajemo komponentu Image
+-u komponentu Map dodajemo komponentu NavigationControl sa prop position

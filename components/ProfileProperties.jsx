@@ -39,7 +39,10 @@ const ProfileProperties = ({ properties: initialProperties }) => {
           {property.name}
         </p>
         <p className='text-gray-600'>
-          Address: {property.location.street} {property.location.city} {property.location.state}
+          <span>Address: </span> 
+          <span>{property.location.street}, </span>
+          <span>{property.location.city}, </span>
+          <span>{property.location.state}</span>
         </p>
       </div>
       <div className='mt-2'>
