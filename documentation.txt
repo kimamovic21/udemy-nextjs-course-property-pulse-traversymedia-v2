@@ -577,3 +577,44 @@ Section 06: Profile & Manage Properties
 -u komponenti Navbar.jsx, komponentama Link dodajemo prop onClick
 -u prop onClick proslijedujemo anonimne funkcije
 -u anonimne funkcije proslijedujemo funkciju setIsProfileMenuOpen(false)
+
+49. Deleting Properties
+-u folderu actions kreiramo deleteProperty.js fajl
+-u deleteProperty.js fajl dodajemo direktivu 'use server'
+-importujemo instancu cloudinary iz paketa Cloudinary
+-importujemo funkcije connectDB, getSessionUser i revalidatePath
+-importujemo model Property iz Property.js fajla
+-u funkciju deleteProperty() dodajemo metodu await getSessionUser()
+-vrijednost metode await getSessionUser() pohranjujemo u varijablu const sessionUser
+-dodajemo uslov if (!sessionUser || !sessionUser.userId)
+-u uslov if dodajemo funkciju throw new Error()
+-destruktuiramo varijablu const { userId } iz varijable sessionUser
+-dodajemo metodu await Property.findById(propertyId)
+-vrijednost metode await Property.findById(propertyId) pohranjujemo u varijablu const property
+-dodajemo uslov if (!property)
+-u uslov if (!property) dodajemo funkciju throw new Error()
+-dodajemo uslov if (property.owner.toString() !== userId)
+-u uslov if dodajemo funkciju throw new Error()
+-dodajemo metodu property.images.map()
+-vrijednost metode property.images.map() pohranjujemo u varijablu const publicIds
+-u funkciji map() kreiramo varijablu const parts
+-dodajemo izjavu return parts
+-dodajemo uslov if (publicIds.length > 0)
+-u uslovu if dodajemo petlju for (let publicId of publicIds)
+-u petlju for() dodajemo await cloudinary.uploader.destroy()
+-dodajemo metodu await property.deleteOne()
+-dodajemo funkciju revalidatePath('/', 'layout')
+-u komponentu ProfileProperties.jsx importujemo funkciju deleteProperty iz deleteProperty.js fajla
+-kreiramo asinhronu funkciju handleDeleteProperty() sa parametrom propertyId
+-u funkciji handleDeleteProperty() kreiramo varijablu const confirmed
+-dodajemo uslov if (!confirmed) return
+-dodajemo metodu await deleteProperty(propertyId)
+-dodajemo metodu properties.filter()
+-vrijednost metode properties.filter() pohranjujemo u varijablu const updatedProperties
+-dodajemo funkcije setProperties(updatedProperties)
+-u jsx-u button elementu dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo anonimnu funkciju
+-u anonimnu funkciju proslijedujemo funkciju handleDeleteProperty()
+-dodajemo Google Chrome ekstenziju Fake Filler za automatsko popunjavanje forme prilikom kreiranja nekretnine
+-kreiramo jednu nekretninu sa slikama i obrisemo je
+-provjerimo da li su slike obrisane na servisu Cloudinary
