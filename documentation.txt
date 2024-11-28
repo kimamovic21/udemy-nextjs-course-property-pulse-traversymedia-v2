@@ -558,3 +558,22 @@ Section 06: Profile & Manage Properties
 -u komponentu ProfileProperties.jsx importujemo komponentu Image
 -u jsx-u dinamicki prikazujemo podatke o nekretninama
 -u funkciji map() div elementu dodajemo prop key i className
+
+48. Serialize Lean Documents
+-u folderu utils kreiramo convertToObject.js fajl
+-u convertToObject.js fajlu kreiramo i eksportujemo funkciju convertToSerializabledObject() sa parametrom leanDocument
+-u funkciju convertToSerializabledObject() dodajemo petlju for()
+-u komponentu profile/page.jsx importujemo funkciju convertToSerializabledObject
+-preimenujemo varijablu const properties u varijablu const propertiesDocs
+-dodajemo metodu propertiesDocs.map()
+-vrijednost metode propertiesDocs.map() pohranjujemo u varijablu const properties
+-u komponentu ProfileProperties.jsx importujemo komponentu Link
+-u jsx-u umjesto a elementa dodajemo komponentu Link
+-u komponenti properties/[id]/page.jsx preimenujemo varijablu const property u const propertyDoc
+-dodajemo metodu convertToSerializabledObject(propertyDoc)
+-vrijednost metode convertToSerializabledObject(propertyDoc) pohranjujemo u varijablu const property
+-dodajemo uslov if (!property)
+-u uslov if dodajemo izjavu return i h2 element 
+-u komponenti Navbar.jsx, komponentama Link dodajemo prop onClick
+-u prop onClick proslijedujemo anonimne funkcije
+-u anonimne funkcije proslijedujemo funkciju setIsProfileMenuOpen(false)

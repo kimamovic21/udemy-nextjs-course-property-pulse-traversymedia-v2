@@ -1,4 +1,5 @@
 import { getSessionUser } from '@/utils/getSessionUser';
+import { convertToSerializabledObject } from '@/utils/convertToObject';
 import connectDB from '@/config/database';
 import Image from 'next/image';
 import Property from '@/models/Property';
@@ -16,7 +17,8 @@ const ProfilePage = async () => {
     throw new Error('User ID is required');
   };
 
-  const properties = await Property.find({ owner: userId }).lean();
+  const propertiesDocs = await Property.find({ owner: userId }).lean();
+  const properties = propertiesDocs.map(convertToSerializabledObject);
 
   return (
     <section className='bg-blue-50'>
