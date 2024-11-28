@@ -627,3 +627,30 @@ Section 06: Profile & Manage Properties
 -u body element dodajemo komponentu ToastContainer
 -u komponentu ProfileProperties importujemo funkciju toast iz paketa React Toastify
 -u funkciju handleDeleteProperty() dodajemo funkciju toast.success()
+
+51. Edit Property Form
+-u komponenti ProfileProperties.jsx, umjesto a elementa za uredivanje nekretnina dodajemo komponentu Link
+-komponenti Link dodajemo dinamicki prop href
+-u folderu properties/[id] kreiramo folder edit i komponentu page.jsx
+-u komponenti properties/[id]/page.jsx, u funkciji PropertyEditPage() kreiramo section roditelj element
+-u section elementu kreiramo dva div elemente sa Tailwind CSS klasama
+-u folderu components kreiramo komponentu PropertyEditForm.jsx
+-u komponentu properties/[id]/page.jsx importujemo komponentu PropertyEditForm.jsx
+-u jsx-u, u drugi div element dodajemo komponentu PropertyEditForm
+-funkciji PropertyEditPage() dodajemo parametar destruktuirani prop params
+-importujemo funkcije convertToSerializabledObject i connectDB
+-importujemo model Property iz Property.js fajla
+-funkciji PropertyEditPage() dodajemo asinhronost
+-u funkciju PropertyEditPage() dodajemo metodu await connectDB()
+-dodajemo metodu await Property.findById()
+-vrijednost metode Property.findById() pohranjujemo u varijablu const propertyDoc
+-dodajemo metodu convertToSerializabledObject(propertyDoc)
+-vrijednost metode convertToSerializabledObject(propertyDoc) pohranjujemo u varijablu const property
+-dodajemo uslov if (!property)
+-u uslov if (!property) dodajemo izjavu return i h2 element
+-u jsx-u komponenti PropertyEditForm dodajemo prop property
+-u komponenti PropertyEditForm.jsx, funkciji PropertyEditForm() dodajemo parametar destruktuirani prop property
+-u jsx-u kreiramo form roditelj element
+-u form elementu kreiramo HTML elemente sa Tailwind CSS klasama
+-u jsx-u input elementima dodajemo prop defaultValue
+-input elementima za amenities dodajemo prop defaultChecked
