@@ -654,3 +654,29 @@ Section 06: Profile & Manage Properties
 -u form elementu kreiramo HTML elemente sa Tailwind CSS klasama
 -u jsx-u input elementima dodajemo prop defaultValue
 -input elementima za amenities dodajemo prop defaultChecked
+
+52. Update Property Action
+-u folderu actions kreiramo updateProperty.js fajl
+-u updateProperty.js dodajemo direktivu 'use server'
+-u updateProperty.js fajlu kreiramo asinhronu funkciju updateProperty() sa parametrima propertyId i formData
+-funkciju updateProperty eksportujemo kao default
+-importujemo funkcije revalidatePath, redirect, getServerSession i connectDB
+-importujemo model Property iz Property.js fajla
+-u funkciju updateProperty() dodajemo metodu await connectDB()
+-kreiramo varijablu const sessionUser
+-dodajemo uslov if (!sessionUser || !sessionUser.userId)
+-destruktuiramo varijablu const { userId } iz varijable sessionUser
+-dodajemo metodu await Property.findById(propertyId)
+-vrijednost metode await Property.findById(propertyId) pohranjujemo u varijablu const existingProperty 
+-dodajemo uslov if (existingProperty.owner.toString() !== userId)
+-u uslov if dodajemo funkciju throw new Error()
+-kreiramo varijablu const amenities
+-kreiramo varijablu objekt const propertyData
+-dodajemo metodu await Property.findByIdAndUpdate()
+-vrijednost metode await Property.findByIdAndUpdate() pohranjujemo u varijablu const updatedProperty
+-dodajemo funkcije revalidatePath() i redirect()
+-u komponentu PropertyEditForm.jsx importujemo funkciju updateProperty iz updateProperty.js fajla
+-u funkciju PropertyEditForm() dodajemo metodu updateProperty.bind()
+-vrijednost metode updateProperty.bind() pohranjujemo u varijablu const updatePropertyById
+-u jsx-u elementu form dodajemo prop action
+-u prop action proslijedujemo funkciju updatePropertyById
