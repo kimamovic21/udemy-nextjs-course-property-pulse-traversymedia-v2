@@ -220,7 +220,7 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 -u komponentu properties/page.jsx importujemo model Property
 -importujemo funkciju connectDB iz foldera config
 -funkciji PropertiesPage dodajemo asinhronost
--dodajemo metodu await Property.find({ }).lean();
+-dodajemo metodu await Property.find({ }).lean()
 -vrijednost metode Property.find() pohranjujemo u varijablu const properties
 -u komponentu HomeProperties.jsx importujemo funkciju connectDB i model Property
 -funkciji HomeProperties.jsx dodajemo asinhronost
@@ -680,3 +680,45 @@ Section 06: Profile & Manage Properties
 -vrijednost metode updateProperty.bind() pohranjujemo u varijablu const updatePropertyById
 -u jsx-u elementu form dodajemo prop action
 -u prop action proslijedujemo funkciju updatePropertyById
+
+
+Section 07: Map, Bookmarks & Sharing
+
+53. Geocode For Latitude & Longitude
+-otvorimo web stranicu https://console.cloud.google.com/
+-u .env.local fajlu kreiramo env varijablu NEXT_PUBLIC_GOOGLE_GEOCODING_API_KEY
+-u example.env fajl dodajemo primjer varijable koju je potrebno kreirati
+-u folderu components kreiramo komponentu PropertyMap.jsx
+-u komponentu PropertyMap() dodajemo direktivu 'use client'
+-funkciji PropertyMap() dodajemo parametar destruktuirani prop property
+-u komponentu PropertyDetails.jsx importujemo komponentu PropertyMap.jsx
+-u jsx-u dodajemo komponenti PropertyMap prop property
+-otvorimo link: https://www.npmjs.com/package/react-geocode
+-otvorimo link: https://www.npmjs.com/package/mapbox-gl
+-otvorimo link: https://www.npmjs.com/package/react-map-gl
+-u terminalu instaliramo pakete React Geocode, Mapbox GL i React Map GL
+-u komponentom PropertyMap.jsx importujemo funkcije useState i useEffect iz paketa React
+-importujemo funkcije setDefaults i fromAddress iz paketa React Geocode
+-kreiramo state varijablu const lat i set funkciju setLat
+-kreiramo state varijablu const lng i set funkciju setLng
+-kreiramo state varijablu const viewport i set funkciju setViewport
+-kreiramo state varijablu const loading i set funkciju setLoading
+-kreiramo state varijablu const geocodeError i set funkciju setGeocodeError
+-pozivamo funkciju setDefaults()
+-u funkciju setDefaults() dodajemo konfiguracioni objekt
+-u konfiguracioni objekt dodajemo opcije key, language i region
+-pozivamo funkciju useEffect() sa dva argumenta
+-prvi argument je anonimna funkcija a drugi argument prazan niz
+-u anonimnoj funkciji kreiramo asinhronu funkciju fetchCoords
+-pozivamo funkciju fetchCoords()
+-u funkciju fetchCoords() dodajemo blokove koda try, catch i finally
+-u blok koda finally dodajemo funkciju setLoading(false)
+-u blok koda catch dodajemo funkciju setGeocodeError(true)
+-u blok koda try dodajemo metodu await fromAddress()
+-vrijednost metode await fromAddress() pohranjujemo u varijablu const res
+-dodajemo uslov if (res.results.length === 0)
+-u uslov if dodajemo funkciju setGeocodeError(true)
+-dodajemo izjavu return
+-destruktuiramo varijable const { lat, lng }
+-pozivamo funkcije setLat(lat), setLng(lng) i setViewport()
+-dodajemo uslove if (loading) i if (geocodeError)
