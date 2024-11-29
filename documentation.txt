@@ -872,3 +872,37 @@ Section 07: Map, Bookmarks & Sharing
 -u komponentu FacebookShareButton dodajemo komponentu FacebookIcon sa samozatvarajucim tagom
 -komponenti FacebookIcon dodajemo prop size i round
 -u jsx-u dodajemo ostale komponente iz paketa React Share
+
+
+Section 08. Property Search
+
+61. Property Search Component
+-u folderu components kreiramo komponentu PropertySearchForm.jsx
+-u komponenti PropertySearchForm.jsx, u jsx-u kreiramo form element kao roditelj element
+-u form elementu kreiramo vise HTML elemenata sa Tailwind CSS klasama
+-u komponentu Hero.jsx importujemo komponentu PropertySearchForm.jsx
+-u komponentu PropertySearchForm.jsx dodajemo direktivu 'use client'
+-importujemo funkcije useState i useRouter
+-kreiramo state varijablu const location i set funkciju setLocation
+-kreiramo state varijablu const propertyType i set funkciju setPropertyType
+-dodajemo funkciju useRouter()
+-vrijednost funkcije useRouter() pohranjujemo u varijablu const router
+-u jsx-u input elementu za lokaciju dodajemo prop value i onChange
+-u prop value proslijedujemo vrijednost varijable location
+-u dogadaj onChange proslijedujemo anonimnu funkciju sa parametrom e
+-u anonimnu funkcija dodajemo funkciju setLocation(e.target.value)
+-select elementu za tip nekretnine dodajemo prop value i onChange
+-u prop value proslijedujemo vrijednost varijable propertyType
+-u dogadaj onChange proslijedujemo anonimnu funkciju sa parametrom e
+-u anonimnu funkcija dodajemo funkciju setPropertyType(e.target.value)
+-kreiramo funkciju handleSubmit() sa parametrom e
+-u funkciju handleSubmit() dodajemo metodu e.preventDefault()
+-dodajemo uslove if - else
+-dodajemo u uslov if (location === '' && propertyType === 'All') 
+-u uslov if dodajemo metodu router.push('/properties')
+-u uslovu else kreiramo varijablu const query
+-dodajemo metodu router.push()
+-u jsx-u form elementu dodajemo dogadaj onSubmit
+-u dogadaj onSubmit proslijedujemo funkciju handleSubmit
+-unesemo lokaciju, tip nekretnine i kliknemo dugme Search
+-otvorimo link: http://localhost:3000/properties/search-results?location=Boston&propertyType=Studio
