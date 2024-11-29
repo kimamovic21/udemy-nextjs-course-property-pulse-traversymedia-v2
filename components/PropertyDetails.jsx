@@ -18,8 +18,8 @@ const PropertyDetails = ({ property }) => {
         <div className='text-gray-500 mb-4 flex align-middle justify-center md:justify-start'>
           <FaMapMarker className='text-xl text-orange-700 mr-2' />
           <p className='text-orange-700'>
-            <span>{property?.location?.street}</span>,
-            <span>{property?.location?.city}</span>,
+            <span className='mr-1'>{property?.location?.street},</span>
+            <span className='mr-1'>{property?.location?.city},</span>
             <span>{property?.location?.state}</span>
           </p>
         </div>

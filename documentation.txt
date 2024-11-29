@@ -922,3 +922,22 @@ Section 08. Property Search
 -vrijednost metode await Property.find(query) pohranjujemo u varijablu const propertiesQueryResults
 -dodajemo metodu propertiesQueryResults.map()
 -vrijednost metode propertiesQueryResults.map() pohranjujemo u varijablu const properties
+
+63. Display Search Results
+-u komponentu seach-results/page.jsx importujemo komponentu Link iz paketa Next Navigation
+-importujemo komponente PropertyCard.jsx i PropertySearchForm.jsx
+-importujemo React ikonicu FaArrowAltCircleLeft
+-u jsx-u kreiramo element prazan fragment kao roditelj element
+-u praznom fragmentu kreiramo dva section elementa
+-u prvom section elementu kreiramo div element
+-u div element dodajemo komponentu PropertySearchForm
+-u drugom section elementu kreiramo div element
+-u div element dodajemo komponentu Link
+-kreiramo h2 element
+-HTML elementima dodajemo Tailwind CSS klase
+-dodajemo ternarni operator properties.length === 0
+-u prvi dio ternarnog uslova dodajemo p element
+-u drugi dio ternarnog uslova dodajemo div element sa Tailwind CSS Grid klasama
+-u div element dodajemo metodu properties.map()
+-u funkciju map() dodajemo komponentu PropertyCard
+-komponenti PropertyCard dodajemo prop key i property
