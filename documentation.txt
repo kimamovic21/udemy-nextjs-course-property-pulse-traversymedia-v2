@@ -802,3 +802,37 @@ Section 07: Map, Bookmarks & Sharing
 -u dogadaj onClick proslijedujemo funkciju handleBookmarkProperty
 -kliknemo dugme Bookmark Property
 -u bazi podataka MongoDB provjerimo da li se sacuvao bookmark u kolekciji za korisnike
+
+58. Check Bookmark Status
+-u komponentu BookmarkButton.jsx importujemo funkcije useState i useEffect iz paketa React
+-kreiramo state varijablu const isBookmarked i set funkciju setIsBookmarked
+-kreiramo state varijablu const loading i set funkciju setLoading
+-u jsx-u dodajemo ternarni uslov za varijablu isBookmarked 
+-u prvi dio ternarnog operatora dodajemo crveno dugme
+-u drugi dio ternarnog operatora dodajemo plavo dugme
+-u funkciju then() dodajemo funkciju setIsBookmarked(res.isBookmarked)
+-u folderu actions kreiramo checkBookmarkStatus.js fajl
+-u checkBookmarkStatus.js fajl dodajemo direktivu 'use client'
+-importujemo funkcije getSessionUser i connectDB
+-importujemo model User iz User.js fajla
+-kreiramo i eksportujemo asinhronu funkciju checkBookmarkStatus() sa parametrom propertyId
+-funkciju checkBookmarkStatus() eksportujemo kao default
+-u funkciju checkBookmarkStatus() dodajemo metodu await connectDB()
+-kreiramo varijablu const sessionUser
+-dodajemo uslov if (!sessionUser || !sessionUser.userId)
+-destruktuiramo varijablu const { userId }
+-kreiramo varijable const user i let isBookmarked 
+-dodajemo izjavu return objekt
+-u objekt dodajemo varijablu isBookmarked
+-u komponentu BookmarkButton.jsx importujemo funkciju checkBookmarkStatus
+-pozivamo funkciju useEffect() sa dva argumenta
+-prvi argument je anonimna funkcija a drugi argument je niz
+-u niz dodajemo varijable property._id, userId i checkBookmarkStatus
+-u anonimnu funkciju dodajemo uslov if (!userId)
+-u uslov if (!userId) dodajemo funkciju setLoading(false) i izjavu return
+-dodajemo metodu checkBookmarkStatus(property._id).then()
+-u funkciju then() dodajemo uslov if (res.error) 
+-u uslov if (res.error) dodajemo funkciju toast.error(res.error)
+-dodajemo uslov if (res.isBookmarked)
+-u uslov if (res.isBookmarked) dodajemo funkciju setIsBookmarked()
+-nakon uslova if dodajemo funkciju setLoading(false)
