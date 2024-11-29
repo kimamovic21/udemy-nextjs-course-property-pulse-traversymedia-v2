@@ -1,4 +1,4 @@
-import { convertToSerializabledObject } from '@/utils/convertToObject';
+import { convertToSerializableObject } from '@/utils/convertToObject';
 import connectDB from '@/config/database';
 import Property from '@/models/Property';
 import PropertyEditForm from '@/components/PropertyEditForm';
@@ -7,7 +7,7 @@ const PropertyEditPage = async ({ params }) => {
   await connectDB();
 
   const propertyDoc = await Property.findById(params.id).lean();
-  const property = convertToSerializabledObject(propertyDoc);
+  const property = convertToSerializableObject(propertyDoc);
 
   if (!property) {
     return (

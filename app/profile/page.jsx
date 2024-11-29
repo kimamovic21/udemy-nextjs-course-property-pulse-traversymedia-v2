@@ -1,5 +1,5 @@
 import { getSessionUser } from '@/utils/getSessionUser';
-import { convertToSerializabledObject } from '@/utils/convertToObject';
+import { convertToSerializableObject } from '@/utils/convertToObject';
 import connectDB from '@/config/database';
 import Image from 'next/image';
 import Property from '@/models/Property';
@@ -18,7 +18,7 @@ const ProfilePage = async () => {
   };
 
   const propertiesDocs = await Property.find({ owner: userId }).lean();
-  const properties = propertiesDocs.map(convertToSerializabledObject);
+  const properties = propertiesDocs.map(convertToSerializableObject);
 
   return (
     <section className='bg-blue-50'>

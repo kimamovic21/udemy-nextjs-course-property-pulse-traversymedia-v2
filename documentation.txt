@@ -561,17 +561,17 @@ Section 06: Profile & Manage Properties
 
 48. Serialize Lean Documents
 -u folderu utils kreiramo convertToObject.js fajl
--u convertToObject.js fajlu kreiramo i eksportujemo funkciju convertToSerializabledObject() sa parametrom leanDocument
--u funkciju convertToSerializabledObject() dodajemo petlju for()
--u komponentu profile/page.jsx importujemo funkciju convertToSerializabledObject
+-u convertToObject.js fajlu kreiramo i eksportujemo funkciju convertToSerializableObject() sa parametrom leanDocument
+-u funkciju convertToSerializableObject() dodajemo petlju for()
+-u komponentu profile/page.jsx importujemo funkciju convertToSerializableObject
 -preimenujemo varijablu const properties u varijablu const propertiesDocs
 -dodajemo metodu propertiesDocs.map()
 -vrijednost metode propertiesDocs.map() pohranjujemo u varijablu const properties
 -u komponentu ProfileProperties.jsx importujemo komponentu Link
 -u jsx-u umjesto a elementa dodajemo komponentu Link
 -u komponenti properties/[id]/page.jsx preimenujemo varijablu const property u const propertyDoc
--dodajemo metodu convertToSerializabledObject(propertyDoc)
--vrijednost metode convertToSerializabledObject(propertyDoc) pohranjujemo u varijablu const property
+-dodajemo metodu convertToSerializableObject(propertyDoc)
+-vrijednost metode convertToSerializableObject(propertyDoc) pohranjujemo u varijablu const property
 -dodajemo uslov if (!property)
 -u uslov if dodajemo izjavu return i h2 element 
 -u komponenti Navbar.jsx, komponentama Link dodajemo prop onClick
@@ -638,14 +638,14 @@ Section 06: Profile & Manage Properties
 -u komponentu properties/[id]/page.jsx importujemo komponentu PropertyEditForm.jsx
 -u jsx-u, u drugi div element dodajemo komponentu PropertyEditForm
 -funkciji PropertyEditPage() dodajemo parametar destruktuirani prop params
--importujemo funkcije convertToSerializabledObject i connectDB
+-importujemo funkcije convertToSerializableObject i connectDB
 -importujemo model Property iz Property.js fajla
 -funkciji PropertyEditPage() dodajemo asinhronost
 -u funkciju PropertyEditPage() dodajemo metodu await connectDB()
 -dodajemo metodu await Property.findById()
 -vrijednost metode Property.findById() pohranjujemo u varijablu const propertyDoc
--dodajemo metodu convertToSerializabledObject(propertyDoc)
--vrijednost metode convertToSerializabledObject(propertyDoc) pohranjujemo u varijablu const property
+-dodajemo metodu convertToSerializableObject(propertyDoc)
+-vrijednost metode convertToSerializableObject(propertyDoc) pohranjujemo u varijablu const property
 -dodajemo uslov if (!property)
 -u uslov if (!property) dodajemo izjavu return i h2 element
 -u jsx-u komponenti PropertyEditForm dodajemo prop property
@@ -906,3 +906,19 @@ Section 08. Property Search
 -u dogadaj onSubmit proslijedujemo funkciju handleSubmit
 -unesemo lokaciju, tip nekretnine i kliknemo dugme Search
 -otvorimo link: http://localhost:3000/properties/search-results?location=Boston&propertyType=Studio
+
+62. Fetch Search Results
+-u folderu properties kreiramo folder search-results
+-funkciji SearchResultsPage() dodajemo parametar destruktuirani prop searchParams
+-funkciji SearchResultsPage() dodajemo asinhronost
+-importujemo funkcije convertToSerializableObject, connectDB i model Property
+-u funkciju SearchResultsPage() dodajemo metodu await connectDB()
+-kreiramo varijablu const locationPattern
+-kreiramo varijablu objekt let query
+-u objekt qeury dodajemo niz $or
+-dodajemo uslov if (propertyType && propertyType !== 'All')
+-u uslovu if kreiramo varijablu const typePattern
+-dodajemo metodu await Property.find(query)
+-vrijednost metode await Property.find(query) pohranjujemo u varijablu const propertiesQueryResults
+-dodajemo metodu propertiesQueryResults.map()
+-vrijednost metode propertiesQueryResults.map() pohranjujemo u varijablu const properties
