@@ -858,3 +858,17 @@ Section 07: Map, Bookmarks & Sharing
 -u div element dodajemo metodu bookmarks.map()
 -u funkciju map() dodajemo komponentu PropertyCard
 -komponenti PropertyCard dodajemo prop key i property
+
+60. Share Buttons
+-otvorimo link: https://www.npmjs.com/package/react-share
+-u terminalu instaliramo paket React Share sa komandom npm i react-share
+-u komponentu ShareButtons.jsx dodajemo direktivu 'use client'
+-importujemo komponente iz paketa React Share
+-kreiramo varijablu const shareUrl
+-u jsx-u dodajemo prazan fragment kao roditelj element
+-u praznom fragment elementu kreiramo elemente h3 i div sa Tailwind CSS klasama
+-u div element dodajemo komponentu FacebookShareButton sa otvorenim i zatvorenim tagom
+-komponenti FacebookShareButton dodajemo prop url, quote i hashtah
+-u komponentu FacebookShareButton dodajemo komponentu FacebookIcon sa samozatvarajucim tagom
+-komponenti FacebookIcon dodajemo prop size i round
+-u jsx-u dodajemo ostale komponente iz paketa React Share
