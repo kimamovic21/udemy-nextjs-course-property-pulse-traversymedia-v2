@@ -758,3 +758,32 @@ Section 07: Map, Bookmarks & Sharing
 -funkciji PropertyContactForm() dodajemo parametar destruktuirani prop property
 -u jsx-u kreiramo div element kao roditelj element sa Tailwind CSS klasama
 -u roditelj div elementu kreiramo vise HTML elemenata sa Tailwind CSS klasama
+
+56. Bookmark Property Action
+-u folderu actions kreiramo bookmarkProperty.js fajl
+-u bookmarkProperty.js fajl dodajemo direktivu 'use server'
+-importujemo funkcije revalidatePath, getSessionUser i revalidatePath
+-importujemo mode User iz User.js fajla
+-kreiramo asinhronu funkciju bookmarkProperty() sa parametrom propertyId
+-funkciju bookmarkProperty eksportujemo kao default 
+-u funkciju bookmarkProperty() dodajemo metodu await connectDB()
+-dodajemo metodu await getSessionUser()
+-vrijednost metode await getSessionUser() pohranjujemo u varijablu const sessionUser
+-dodajemo uslov if (!sessionUser || !sessionUser.userId)
+-u uslov if dodajemo funkciju throw new Error()
+-destruktuiramo varijablu const { userId } iz varijable sessionUser
+-dodajemo metodu await User.findById(userId)
+-vrijednost metode await User.findById(userId) pohranjujemo u varijablu const user
+-kreiramo varijablu const isBookmarked
+-kreiramo varijablu let message
+-dodajemo uslov if (isBookmarked) - else
+-u uslov if (isBookmarked) dodajemo metodu user.bookmarks.pull(propertyId)
+-redeklarisemo varijablu message da je bookmark izbrisan
+-dodajemo varijabli isBookmarked vrijednost false
+-u uslov else dodajemo metodu user.bookmarks.push(propertyId)
+-redeklarisemo varijablu message da je bookmark dodan
+-dodajemo varijabli isBookmarked vrijednost true
+-nakon uslova if - else dodajemo metodu await save.user()
+-pozivamo funkciju revalidatePath()
+-dodajemo izjavu return objekt
+-u objekt dodajemo varijable message i isBookmarked
