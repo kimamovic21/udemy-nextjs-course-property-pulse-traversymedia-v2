@@ -774,7 +774,7 @@ Section 07: Map, Bookmarks & Sharing
 -destruktuiramo varijablu const { userId } iz varijable sessionUser
 -dodajemo metodu await User.findById(userId)
 -vrijednost metode await User.findById(userId) pohranjujemo u varijablu const user
--kreiramo varijablu const isBookmarked
+-kreiramo varijablu let isBookmarked
 -kreiramo varijablu let message
 -dodajemo uslov if (isBookmarked) - else
 -u uslov if (isBookmarked) dodajemo metodu user.bookmarks.pull(propertyId)
@@ -787,3 +787,18 @@ Section 07: Map, Bookmarks & Sharing
 -pozivamo funkciju revalidatePath()
 -dodajemo izjavu return objekt
 -u objekt dodajemo varijable message i isBookmarked
+
+57. Bookmark Button Functionality
+-u komponentu BookmarkButton.jsx dodajemo direktivu 'use client'
+-importujemo funkcije useSession, toast i bookmarkProperty
+-u funkciji BookmarkButton() kreiramo asinhronu funkciju handleBookmarkProperty()
+-dodajemo funkciju useSession()
+-vrijednost funkcije useSession() pohranjujemo u destruktuiranu varijablu const { data: session }
+-kreiramo varijablu const userId
+-u funkciju handleBookmarkProperty() dodajemo uslov if(!userId)
+-u uslov if(!userId) dodajemo funkciju toast.error()
+-dodajemo metodu bookmarkProperty(property._id).then()
+-u jsx-u button elementu dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo funkciju handleBookmarkProperty
+-kliknemo dugme Bookmark Property
+-u bazi podataka MongoDB provjerimo da li se sacuvao bookmark u kolekciji za korisnike
