@@ -124,7 +124,7 @@ Section 02: Next.js Fundamentals & Project Start
 -u komponentu properties/page.jsx importujemo niz properties
 -kreiramo roditelj section element sa Tailwind CSS klasama
 -u section elementu kreiramo div element sa Tailwind CSS klasama
--u div element dodajemo uslov ternani operator properties.length === 0
+-u div element dodajemo uslov ternarni operator properties.length === 0
 -u prvi uslov dodajemo p element da nema nekretnina
 -u drugi uslov dodajemo metodu properties.map()
 -u folderu components kreiramo komponentu PropertyCard.jsx
@@ -514,7 +514,7 @@ Section 05: Server Actions & Creating Properties
 -u jsx-u dodajemo komponentu PropertyImages sa prop images
 -u komponentu PropertyImages.jsx importujemo komponentu Image
 -u section elementu kreiramo div element sa Tailwind CSS klasama
--u div element ternani uslov images.length === 1
+-u div element ternarni uslov images.length === 1
 -u prvi dio ternarnog uslova dodajemo komponentu Image
 -u drugi dio ternarnog uslova kreiramo div element sa Tailwind CSS Grid klasama
 -u div element dodajemo metodu images.map()
@@ -836,3 +836,25 @@ Section 07: Map, Bookmarks & Sharing
 -dodajemo uslov if (res.isBookmarked)
 -u uslov if (res.isBookmarked) dodajemo funkciju setIsBookmarked()
 -nakon uslova if dodajemo funkciju setLoading(false)
+
+59. Saved Properties Page
+-u folderu app/properties kreiramo folder saved i komponentu page.jsx
+-u komponentu saved/page.jsx importujemo funkcije getSessionUser i connectDB
+-importujemo model User iz User.js fajla
+-importujemo komponentu PropertyCard.jsx
+-funkciji SavedPropertiesPage() dodajemo asinhronost
+-u funkciju SavedPropertiesPage() dodajemo metodu await connectDB()
+-dodajemo metodu await getSessionUser()
+-vrijednost metode await getSessionUser() pohranjujemo u varijablu const sessionUser
+-destruktuiramo varijablu const { userId } iz varijable sessionUser
+-dodajemo metodu await User.findById()
+-vrijednost metode await User.findById() pohranjujemo u varijablu const user
+-destruktuiramo varijablu const { bookmarks } iz varijable user
+-u jsx-u kreiramo section roditelj element sa Tailwind CSS klsama
+-u section elementu kreiramo div i h2 elemente sa Tailwind CSS klasama
+-u div elementu dodajemo ternnarni uslov bookmarks.length === 0
+-u prvi dio ternarnog uslova dodajemo p element
+-u drugi dio ternarnog uslova dodajemo div element sa Tailwind CSS Grid klasama
+-u div element dodajemo metodu bookmarks.map()
+-u funkciju map() dodajemo komponentu PropertyCard
+-komponenti PropertyCard dodajemo prop key i property
