@@ -740,3 +740,21 @@ Section 07: Map, Bookmarks & Sharing
 -komponenti Marker dodajemo prop longitude, latitude i anchor
 -u komponentu Marker dodajemo komponentu Image
 -u komponentu Map dodajemo komponentu NavigationControl sa prop position
+
+55. Property Page Sidebar
+-u komponenti properties/[id]/page.jsx, u jsx-u kreiramo aside element sa prop className
+-u folderu components kreiramo komponente BookmarkButton.jsx, ShareButtons.jsx i PropertyContactForm.jsx
+-u element aside dodajemo importovane komponente
+-svakoj komponenti dodajemo prop property
+-u komponentu BookmarkButton.jsx importujemo React ikonicu FaBookmark
+-funkciji BookmarkButton() dodajemo parametar destruktuirani prop property
+-u jsx-u kreiramo button element sa Tailwind CSS klasama
+-u button element dodajemo komponentu FaBookmark
+-u komponentu ShareButtons.jsx importujemo React ikonicu FaShare
+-funkciji ShareButtons() dodajemo parametar destruktuirani prop property
+-u jsx-u kreiramo button element sa Tailwind CSS klasama
+-u button element dodajemo komponentu FaShare
+-u komponentu PropertyContactForm.jsx importujemo React ikonicu FaPaperPlane
+-funkciji PropertyContactForm() dodajemo parametar destruktuirani prop property
+-u jsx-u kreiramo div element kao roditelj element sa Tailwind CSS klasama
+-u roditelj div elementu kreiramo vise HTML elemenata sa Tailwind CSS klasama
