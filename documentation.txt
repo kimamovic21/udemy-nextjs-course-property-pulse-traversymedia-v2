@@ -258,7 +258,7 @@ Section 03: MongoDB Database, Server Components & Fetching Properties
 -umjesto i elemenata dodajemo React ikonice
 -funkciji PropertyDetails.jsx dodajemo parametar destruktuirani prop property
 -u jsx-u kreiramo main elemente kao roditelj element
--u main elementu kreiramo HTML elementee sa Tailwind CSS klasama
+-u main elementu kreiramo HTML elemente sa Tailwind CSS klasama
 -u komponentu properties/[id]/page.jsx importujemo komponentu PropertyDetails.jsx
 -u jsx-u komponenti PropertyDetails dodajemo prop property
 -u jsx-u dinamicki prikazujemo podatke iz prop property
@@ -963,3 +963,26 @@ Section 09: Messaging System
 -kreiramo varijablu const newMessage
 -dodajemo metodu await newMessage.save()
 -dodajemo izjavu return { submitted: true }
+
+65. Submit Message & useFormState Hook
+-u komponentu PropertyContactForm.jsx importujemo funkciju useEffect iz paketa React
+-importujemo funkcije useFormState i useFormStatus iz paketa React Dom
+-importujemo funkciju useSession iz paketa Next Auth
+-importujemo funkciju toast iz paketa React Toastify
+-importujemo funkciju addMessage iz addMessage.js fajla
+-u funkciju PropertyContactForm() pozivamo funkciju useSession()
+-vrijednost funkcije useSession() pohranjujemo u varijablu const { data: session } 
+-u jsx-u dodajemo uslov za kondicionalno renderovanje session && 
+-u jsx-u kreiramo dva input elementa sa prop type, id, name i defaultValue
+-pozivamo funkciju useFormState(addMessage, {})
+-vrijednost funkcije useFormState() pohranjujemo u varijable const [state, formAction]
+-dodajemo uslov if (state.submitted)
+-u uslovu if kreiramo p element sa Tailwind CSS klasama
+-pozivamo funkciju useEffect() sa dva argumenta
+-prvi argument je anonimna funkcija, a drugi argument je niz
+-u niz dodajemo varijablu state
+-u anonimnu funkciju dodajemo dva uslova if
+-u jsx-u form elementu dodajemo prop action
+-u prop action proslijedujemo funkciju formAction
+-u jsx-u input elementima dodajemo prop name
+-u addMessage.js fajlu, funkciji addMessage() dodajemo parametar previousState
