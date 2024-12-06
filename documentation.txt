@@ -986,3 +986,14 @@ Section 09: Messaging System
 -u prop action proslijedujemo funkciju formAction
 -u jsx-u input elementima dodajemo prop name
 -u addMessage.js fajlu, funkciji addMessage() dodajemo parametar previousState
+
+66. useFormStatus Hook
+-otvorimo link: https://react.dev/reference/react-dom/hooks/useFormStatus
+-u folderu components kreiramo komponentu SubmitMessageButton.jsx
+-u komponentu PropertyContactForm.jsx importujemo komponentama SubmitMessageButton.jsx
+-u komponentu SubmitMessageButton.jsx importujemo funkciju useFormStatus iz paketa React Dom
+-u funkciji SubmitMessageButton() pozivamo funkciju useFormStatus()
+-vrijednost funkcije useFormStatus() pohranjujemo u destruktuiranu varijablu const { pending }
+-u jsx-u button elementu dodajemo prop disabled
+-u prop disabled proslijedujemo varijablu pending
+-u button elementu dodajemo uslov ternarni operator za varijablu pending
