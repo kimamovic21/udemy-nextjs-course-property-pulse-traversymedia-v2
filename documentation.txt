@@ -997,3 +997,20 @@ Section 09: Messaging System
 -u jsx-u button elementu dodajemo prop disabled
 -u prop disabled proslijedujemo varijablu pending
 -u button elementu dodajemo uslov ternarni operator za varijablu pending
+
+67. Fetch Messages
+-u folderu app kreiramo folder messages i komponentu page.jsx
+-importujemo funkcije getSessionUser, convertToSerializableObject i connectDB
+-importujemo modele Message i Property
+-funkciji MessagesPage() dodajemo asinhronost
+-u funkciju MessagesPage() pozivamo funkciju await connectDB()
+-kreiramo varijablu const sessionUser
+-destruktuiramo varijablu const { userId } iz varijable sessionUser
+-kreiramo varijable const readMessages, const unreadMessages i const messages
+-varijabli const messages dodajemo funkciju map()
+-u funkciji map() kreiramo varijablu const message i pristupamo varijablama message.sender i message.property
+-dodajemo izjavu return message
+-u jsx-u kreiramo section element kao roditelj element sa Tailwind CSS klasama
+-u div elementu sa klasom space-y-4 dodajemo ternarni operator messages.length === 0
+-u prvi dio ternarnog operatora dodajemo p element 
+-u drugi dio ternarnog operatora dodajemo metodu messages?.map()
