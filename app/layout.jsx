@@ -1,4 +1,5 @@
 import { ToastContainer } from 'react-toastify';
+import { GlobalProvider } from '@/context/globalContext';
 import 'react-toastify/dist/ReactToastify.css';
 import '@/assets/styles/globals.css';
 import Navbar from '@/components/Navbar';
@@ -14,16 +15,18 @@ export const metadata = {
 const MainLayout = ({ children }) => {
   return (
     <AuthProvider>
-      <html>
-        <body>
-          <Navbar />
-          <main>
-            {children}
-          </main>
-          <Footer />
-          <ToastContainer />
-        </body>
-      </html>
+      <GlobalProvider>
+        <html>
+          <body>
+            <Navbar />
+            <main>
+              {children}
+            </main>
+            <Footer />
+            <ToastContainer />
+          </body>
+        </html>
+      </GlobalProvider>
     </AuthProvider>
   );
 };

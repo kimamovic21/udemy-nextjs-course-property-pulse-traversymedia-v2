@@ -1081,3 +1081,29 @@ Section 09: Messaging System
 -u dogadaj onClick proslijedujemo funkciju handleDeleteClick
 -dodajemo uslov if (isDeleted)
 -u uslovu if (isDeleted) kreiramo p element
+
+71. Global Context For Message Count
+-kreiramo folder context i GlobalContext.js fajl
+-u GlobalContext.js dodajemo direktivu 'use client'
+-importujemo funkcije createContext, useContext i useState iz paketa React
+-pozivamo funkciju createContext()
+-vrijednost funkcije createContext() pohranjujemo u varijablu const GlobalContext 
+-kreiramo i eksportujemo funkciju GlobalProvider() 
+-funkciji GlobalProvider() dodajemo parametar destruktuirani prop children
+-kreiramo state varijablu unreadCount i set funkciju setUnreadCount
+-u return izjavi dodajemo komponentu GlobalContext.Provider sa otvorenim i zatvorenim tagom
+-komponenti GlobalContext.Provider dodajemo prop value
+-u komponentu GlobalContext.Provider dodajemo prop children
+-kreiramo i eksportujemo funkciju useGlobalContext()
+-u funkciju useGlobalContext() dodajemo izjavu return useContext(GlobalContext)
+-u komponentu layout.jsx importujemo funkciju GlobalProvider
+-u jsx-u dodajemo komponentu GlobalProvider sa otvorenim i zatvorenim tagom
+-kreiramo komponentu UnreadMessageCount.jsx
+-u komponentu UnreadMessageCount.jsx dodajemo direktivu 'use client'
+-importujemo i pozivamo funkciju useGlobalContext()
+-vrijednost funkcije useGlobalContext() pohranjujemo u destruktuiranu varijablu const { unreadCount }
+-u jsx-u kreiramo span element sa Tailwind CSS klasama
+-u span element dodajemo varijablu unreadCount
+-u komponentu Navbar.jsx importujemo komponentu UnreadMessageCount.jsx
+-importujemo React ikonice FaRegBell, RxHamburgerMenu i IoMdClose
+-u span element dodajemo ternarni uslov za varijablu isMobileMenuOpen 
