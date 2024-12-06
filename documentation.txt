@@ -1054,3 +1054,30 @@ Section 09: Messaging System
 -pozivamo funkciju setIsRead()
 -pozivamo funkciju toast.success()
 -u jsx-u dodajemo uslov !isRead && za kondicionalno renderovanje div elementa
+
+70. Delete Messages
+-u folderu actions kreiramo deleteMessage.js fajl
+-u deleteMessage.js fajl importujemo funkcije revalidatePath, getSessionUser i connectDB
+-importujemo model Message iz Message.js fajla
+-kreiramo i eksportujemo kao default asinhronu funkciju deleteMessage()
+-funkciji deleteMessage() dodajemo parameter messageId
+-u funkciji deleteMessage() pozivamo funkciju await connectDB()
+-kreiramo varijablu const sessionUser
+-dodajemo uslov if (!sessionUser || !sessionUser.user)
+-u uslov if dodajemo funkciju throw new Error()
+-destruktuiramo varijablu const { userId } iz varijable sessionUser
+-kreiramo varijablu const message 
+-dodajemo uslov if (!message) 
+-u uslov if (!message) dodajemo funkciju throw new Error()
+-dodajemo uslov if (message.recipient.toString() !== userId)
+-u uslov if dodajemo funkciju throw new Error()
+-pozivamo funkciju revalidatePath()
+-pozivamo metodu await message.deleteOne()
+-u komponentu MessageCard.jsx importujemo funkciju deleteMessage iz deleteMessage.js fajla
+-kreiramo state varijablu const isDeleted i set funkciju setIsDeleted
+-kreiramo asinhronu funkciju handleDeleteClick()
+-u funkciji handleDeleteClick() pozivamo funkcije await deleteMessage(), setIsDeleted(true) i toast.success()
+-button elementu za brisanje dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo funkciju handleDeleteClick
+-dodajemo uslov if (isDeleted)
+-u uslovu if (isDeleted) kreiramo p element
