@@ -1107,3 +1107,31 @@ Section 09: Messaging System
 -u komponentu Navbar.jsx importujemo komponentu UnreadMessageCount.jsx
 -importujemo React ikonice FaRegBell, RxHamburgerMenu i IoMdClose
 -u span element dodajemo ternarni uslov za varijablu isMobileMenuOpen 
+
+72. Get Unread Message Count
+-u folderu actions kreiramo getUnreadMessageCount.js fajl
+-u getUnreadMessageCount.js fajl dodajemo direktivu 'use server'
+-importujemo funkcije getSessionUser i connectDB
+-importujemo model Message iz Message.js fajla
+-kreiramo i eksportujemo asinhronu funkciju getUnreadMessageCount() kao default
+-u funkciji getUnreadMessageCount() pozivamo funkciju await connectDB()
+-kreiramo varijablu const sessionUser
+-dodajemo uslov if (!sessionUser || !sessionUser.user)
+-u uslov if dodajemo izjavu return objekt poruku 
+-destruktuiramo varijablu const { userId } iz varijable sessionUser
+-dodajemo metodu await Message.countDocuments()
+-vrijednost metode await Message.countDocuments() pohranjujemo u varijablu const count
+-dodajemo izjavu return { count }
+-u GlobalContext.js fajl importujemo funkcije useSession i getUnreadMessageCount
+-u funkciji GlobalProvider() pozivamo funkciju useSession()
+-vrijednost funkcije useSession() pohranjujemo u destruktuiranu varijablu const { data: session }
+-importujemo i pozivamo funkciju useEffect() sa dva argumenta
+-prvi argument je anonimna funkcija, a drugi argument je niz
+-u niz dodajemo funkciju getUnreadMessageCount i varijablu session
+-u anonimnu funkciju dodajemo uslov if (session && session.user)
+-u uslov if pozivamo funkciju getUnreadMessageCount()
+-funkciji getUnreadMessageCount() dodajemo metodu then()
+-u komponentu MessageCard.jsx importujemo i pozivamo funkciju getUnreadMessageCount()
+-vrijednost funkcije useGlobalContext() pohranjujemo u destruktuiranu varijablu const { setUnreadCount }
+-u funkciju handleReadClick() pozivamo funkciju setUnreadCount()
+-u funkciju handleDeletelick() pozivamo funkciju setUnreadCount()
