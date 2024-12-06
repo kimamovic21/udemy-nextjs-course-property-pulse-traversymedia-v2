@@ -1014,3 +1014,10 @@ Section 09: Messaging System
 -u div elementu sa klasom space-y-4 dodajemo ternarni operator messages.length === 0
 -u prvi dio ternarnog operatora dodajemo p element 
 -u drugi dio ternarnog operatora dodajemo metodu messages?.map()
+
+68. Display Messages
+-u folderu components kreiramo komponentu MessageCard.jsx
+-funkciji MessageCard() dodajemo parametar destruktuirani prop message
+-u komponentu messages/page.jsx importujemo komponentu MessageCard.jsx
+-u jsx-u, u funkciji map() komponenti MessageCard dodajemo prop key i message
+-u komponenti MessageCard.jsx, u jsx-u kreiramo HTML elemente sa Tailwind CSS klasama
