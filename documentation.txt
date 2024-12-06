@@ -1021,3 +1021,36 @@ Section 09: Messaging System
 -u komponentu messages/page.jsx importujemo komponentu MessageCard.jsx
 -u jsx-u, u funkciji map() komponenti MessageCard dodajemo prop key i message
 -u komponenti MessageCard.jsx, u jsx-u kreiramo HTML elemente sa Tailwind CSS klasama
+
+69. Mark As Read
+-u folderu actions kreiramo markMessageAsRead.js fajl
+-u markMessageAsRead.js fajl dodajemo direktivu 'use server'
+-importujemo funkcije revalidatePath, getSessionUser i connectDB
+-importujemo model Message iz Message.js fajla
+-kreiramo i eksportujemo asinhronu funkciju markMessageAsRead() kao default
+-funkciji markMessageAsRead() dodajemo parametar messageId
+-u funkciji markMessageAsRead() pozivamo funkciju await connectDB()
+-kreiramo varijablu const sessionUser
+-dodajemo uslov if (!sessionUser || !sessionUser.user)
+-u uslov if dodajemo funkciju throw new Error()
+-destruktuiramo varijablu const { userId } iz varijable sessionUser
+-kreiramo varijablu const message 
+-dodajemo uslov if (!message)
+-u uslov if (!message) dodajemo funkciju throw new Error()
+-dodajemo uslov if (message.recipient.toString() !== userId)
+-u uslov if dodajemo funkciju throw new Error()
+-pristupamo varijabli message.read
+-pozivamo funkciju revalidatePath()
+-pozivamo funkciju await message.save()
+-dodajemo izjavu return message.read
+-komponenti MessageCard.jsx dodajemo direktivu 'use client'
+-importujemo funkcije useState, toast i markMessageAsRead
+-kreiramo state varijablu const isRead i set funkciju setIsRead
+-button elementu Mark As Read dodajemo dogadaj onClick
+-kreiramo asinhronu funkciju handleReadClick()
+-u dogadaj onClick proslijedujemo funkciju handleReadClick()
+-u button element dodajemo ternarni uslov za varijablu isRead
+-u funkciji handleReadClick() kreiramo varijablu const read
+-pozivamo funkciju setIsRead()
+-pozivamo funkciju toast.success()
+-u jsx-u dodajemo uslov !isRead && za kondicionalno renderovanje div elementa
