@@ -941,3 +941,25 @@ Section 08. Property Search
 -u div element dodajemo metodu properties.map()
 -u funkciju map() dodajemo komponentu PropertyCard
 -komponenti PropertyCard dodajemo prop key i property
+
+
+Section 09: Messaging System
+
+64. Message Model & addMessage Action
+-u folderu models kreiramo Message.js fajl
+-u Message.js fajlu kreiramo varijablu const MessageSchema 
+-kreiramo i eksportujemo varijablu const Message kao default
+-u folderu actions kreiramo addMessage.js fajl
+-u addMessage.js fajl dodajemo direktivu 'use server'
+-importujemo funkcije getSessionUser i connectDB
+-importujemo model Message iz Message.js fajla
+-kreiramo i eksportujemo asinhronu funkciju addMessage() sa parametrom formData
+-u funkciju addMessage() dodajemo funkciju await connectDB()
+-kreiramo varijablu const sessionUser
+-dodajemo uslov if (!sessionUser || !sessionUser.user) 
+-iz varijable sessionUser destruktuiramo varijablu const { userId }
+-kreiramo varijablu const recipient
+-dodajemo uslov if (userId === recipient) 
+-kreiramo varijablu const newMessage
+-dodajemo metodu await newMessage.save()
+-dodajemo izjavu return { submitted: true }
