@@ -1173,3 +1173,28 @@ Section 10: Pagination, Featured, Lightbox & Deploy
 -komponentama Item dodajemo prop original, thumbnail, width i height
 -u komponente Item dodajemo funkcije ({ ref, open }) 
 -u funkcije ({ ref, open }) dodajemo komponentu Image
+
+76. Featured Properties
+-u folderu components kreiramo komponentu FeaturedProperties.jsx
+-u komponentu FeaturedProperties.jsx importujemo funkciju connectDB i model Property
+-funkciji FeaturedProperties() dodajemo asinhronost
+-u funkciju FeaturedProperties() pozivamo funkciju await connectDB()
+-dodajemo metodu await Property.find()
+-vrijednost metode await Property.find() pohranjujemo u varijablu const properties
+-u jsx-u dodajemo uslov ternarni operator properties.length > 0
+-u prvi dio ternarnog operatora kreiramo section element sa Tailwind klasama
+-u section elementu kreiramo div element sa Tailwind CSS container klasama
+-kreiramo h2 element sa Tailwind CSS klasama
+-kreiramo div element sa Tailwind CSS Grid klasama
+-u div element sa Tailwind CSS Grid klasama dodajemo metodu properties?.map()
+-u folderu components kreiramo komponentu FeaturedPropertyCard.jsx
+-u komponentu 
+-importujemo komponentu FeaturedPropertyCard.jsx
+-u funkciju map() dodajemo komponentu FeaturedPropertyCard sa prop key i property
+-u komponentu app/page.jsx importujemo komponentu FeaturedProperties.jsx
+-u komponenti FeaturedPropertyCard.jsx, funkciji FeaturedPropertyCard() dodajemo parametar destruktuirani prop property
+-importujemo React ikonice, komponente Link i Image
+-u jsx-u kreiramo HTML elemente sa Tailwind CSS klasama
+-kreiramo funkciju getRateDisplay()
+-u jsx-u dinamicki prikazujemo podatke
+-u jsx-u dodajemo uslove za dinamicko prikazivanje property.rates.nightly, property.rates.weekly i property.rates.monthly  
