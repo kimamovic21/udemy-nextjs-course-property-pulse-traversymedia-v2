@@ -1,5 +1,5 @@
 import { ToastContainer } from 'react-toastify';
-import { GlobalProvider } from '@/context/globalContext';
+import { GlobalProvider } from '@/context/GlobalContext';
 import 'react-toastify/dist/ReactToastify.css';
 import '@/assets/styles/globals.css';
 import Navbar from '@/components/Navbar';

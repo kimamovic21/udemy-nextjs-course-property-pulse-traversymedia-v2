@@ -1198,3 +1198,8 @@ Section 10: Pagination, Featured, Lightbox & Deploy
 -kreiramo funkciju getRateDisplay()
 -u jsx-u dinamicki prikazujemo podatke
 -u jsx-u dodajemo uslove za dinamicko prikazivanje property.rates.nightly, property.rates.weekly i property.rates.monthly  
+
+77. Deploy To Vercel
+-otvorimo web stranicu: https://vercel.com/
+-kreiramo novi projekt na web stranici Vercel
+-u projekt dodajemo env varijable
