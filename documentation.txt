@@ -1135,3 +1135,11 @@ Section 09: Messaging System
 -vrijednost funkcije useGlobalContext() pohranjujemo u destruktuiranu varijablu const { setUnreadCount }
 -u funkciju handleReadClick() pozivamo funkciju setUnreadCount()
 -u funkciju handleDeletelick() pozivamo funkciju setUnreadCount()
+
+
+Section 10: Pagination, Featured, Lightbox & Deploy
+
+73. Pagination Logic
+-u komponenti PropertyCard.jsx dodajemo komponentu Image u komponentu Link
+-u komponenti app/properties/page.jsx, funkciji PropertiesPage() dodajemo parametar destruktuirani prop searchParams
+-kreiramo varijable const skip i const total
