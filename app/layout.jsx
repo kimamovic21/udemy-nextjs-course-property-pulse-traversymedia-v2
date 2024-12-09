@@ -5,6 +5,7 @@ import '@/assets/styles/globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AuthProvider from '@/components/AuthProvider';
+import 'photoswipe/dist/photoswipe.css';
 
 export const metadata = {
   title: 'PropertyPulse | Find The Perfect Rental',

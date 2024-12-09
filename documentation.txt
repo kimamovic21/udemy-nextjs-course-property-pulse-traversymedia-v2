@@ -1160,3 +1160,16 @@ Section 10: Pagination, Featured, Lightbox & Deploy
 -dodajemo ternarni uslov page < totalPages
 -u properties/page.jsx komponenti kreiramo varijablu const showPagination
 -u jsx-u dodajemo uslov za kondicionalno renderovanje showPagination && 
+
+75. Photoswipe Lightbox
+-otvorimo link: https://www.npmjs.com/package/photoswipe
+-otvorimo link: https://www.npmjs.com/package/react-photoswipe-gallery
+-u terminalu instaliramo pakete Photoswipe i React Photoswipe Gallery 
+-u terminalu ukucamo komandu npm i photoswipe react-photoswipe-gallery
+-u komponentu layout.jsx importujemo CSS stil za biblioteku Photoswipe
+-u komponentu PropertyImages.jsx importujemo komponente Gallery i Item iz paketa React Photoswipe Gallery
+-dodajemo direktivu 'use client'
+-u metode images.length === 1 i map() dodajemo komponentu Item
+-komponentama Item dodajemo prop original, thumbnail, width i height
+-u komponente Item dodajemo funkcije ({ ref, open }) 
+-u funkcije ({ ref, open }) dodajemo komponentu Image
