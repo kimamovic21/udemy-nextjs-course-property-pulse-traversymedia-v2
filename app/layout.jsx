@@ -1,11 +1,12 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ToastContainer } from 'react-toastify';
 import { GlobalProvider } from '@/context/GlobalContext';
 import 'react-toastify/dist/ReactToastify.css';
 import '@/assets/styles/globals.css';
+import 'photoswipe/dist/photoswipe.css';
+import AuthProvider from '@/components/AuthProvider';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import AuthProvider from '@/components/AuthProvider';
-import 'photoswipe/dist/photoswipe.css';
 
 export const metadata = {
   title: 'PropertyPulse | Find The Perfect Rental',
@@ -22,6 +23,7 @@ const MainLayout = ({ children }) => {
             <Navbar />
             <main>
               {children}
+              <SpeedInsights />
             </main>
             <Footer />
             <ToastContainer />
