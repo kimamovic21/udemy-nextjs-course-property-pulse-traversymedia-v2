@@ -1060,7 +1060,7 @@ Section 09: Messaging System
 -u deleteMessage.js fajl importujemo funkcije revalidatePath, getSessionUser i connectDB
 -importujemo model Message iz Message.js fajla
 -kreiramo i eksportujemo kao default asinhronu funkciju deleteMessage()
--funkciji deleteMessage() dodajemo parameter messageId
+-funkciji deleteMessage() dodajemo parametar messageId
 -u funkciji deleteMessage() pozivamo funkciju await connectDB()
 -kreiramo varijablu const sessionUser
 -dodajemo uslov if (!sessionUser || !sessionUser.user)
@@ -1143,3 +1143,20 @@ Section 10: Pagination, Featured, Lightbox & Deploy
 -u komponenti PropertyCard.jsx dodajemo komponentu Image u komponentu Link
 -u komponenti app/properties/page.jsx, funkciji PropertiesPage() dodajemo parametar destruktuirani prop searchParams
 -kreiramo varijable const skip i const total
+
+74. Pagination Component
+-u folderu components kreiramo komponentu Pagination.jsx
+-u komponentu properties/page.jsx importujemo komponentu Pagination.jsx
+-u komponenti Pagination.jsx kreiramo roditelj section element sa Tailwind CSS klasama
+-u section elementu kreiramo HTML elemente sa Tailwind CSS klasama
+-funkciji Pagination() dodajemo parametre destruktuirani prop page, pageSize i totalItems 
+-u komponenti properties/page.jsx, u jsx-u komponenti Pagination dodajemo prop page, pageSize i totalItems
+-u komponenti Pagination.jsx kreiramo varijablu const totalPages
+-u span elementu dinamicki prikazujemo varijable page i totalPages
+-importujemo komponentu Link
+-umjesto elemenata a dodajemo komponente Link 
+-komponentama Link dodajemo dinamicki prop href
+-dodajemo ternarni uslov page > 1 
+-dodajemo ternarni uslov page < totalPages
+-u properties/page.jsx komponenti kreiramo varijablu const showPagination
+-u jsx-u dodajemo uslov za kondicionalno renderovanje showPagination && 
